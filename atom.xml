@@ -1032,9 +1032,9 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
     <link href="https://blog.signalfire2017.com/2017/10/30/hexo-next-%E6%90%9C%E7%B4%A2-algolia/"/>
     <id>https://blog.signalfire2017.com/2017/10/30/hexo-next-搜索-algolia/</id>
     <published>2017-10-30T14:48:47.000Z</published>
-    <updated>2017-11-14T16:13:37.125Z</updated>
+    <updated>2017-11-14T16:18:06.015Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="目的-添加搜索功能"><a href="#目的-添加搜索功能" class="headerlink" title="目的:添加搜索功能"></a>目的:添加搜索功能</h1><p>algolia似乎是试用一段时间就不能用了,建议使用本地搜索<br><a href="2017/11/14/hexo-next-%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2/#more">hexo-next 本地搜索</a>  </p>
+    <content type="html"><![CDATA[<h1 id="目的-添加搜索功能"><a href="#目的-添加搜索功能" class="headerlink" title="目的:添加搜索功能"></a>目的:添加搜索功能</h1><p>algolia似乎是试用一段时间就不能用了,建议使用本地搜索<br><a href="/2017/11/14/hexo-next-%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2/#more">hexo-next 本地搜索</a>  </p>
 <p>#next版本<br>我的版本号是<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Theme version</div><div class="line">version: <span class="number">5.1</span>.2</div></pre></td></tr></table></figure></p>
 <p>next5.0+版本集成了algolia 这样使配置algolia更简单</p>
 <h1 id="algolia账号申请"><a href="#algolia账号申请" class="headerlink" title="algolia账号申请"></a>algolia账号申请</h1><p><a href="https://www.algolia.com/" target="_blank" rel="external">Algolia官网</a><br><a id="more"></a></p>
@@ -1080,7 +1080,7 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
     
     <summary type="html">
     
-      &lt;h1 id=&quot;目的-添加搜索功能&quot;&gt;&lt;a href=&quot;#目的-添加搜索功能&quot; class=&quot;headerlink&quot; title=&quot;目的:添加搜索功能&quot;&gt;&lt;/a&gt;目的:添加搜索功能&lt;/h1&gt;&lt;p&gt;algolia似乎是试用一段时间就不能用了,建议使用本地搜索&lt;br&gt;&lt;a href=&quot;2017/11/14/hexo-next-%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2/#more&quot;&gt;hexo-next 本地搜索&lt;/a&gt;  &lt;/p&gt;
+      &lt;h1 id=&quot;目的-添加搜索功能&quot;&gt;&lt;a href=&quot;#目的-添加搜索功能&quot; class=&quot;headerlink&quot; title=&quot;目的:添加搜索功能&quot;&gt;&lt;/a&gt;目的:添加搜索功能&lt;/h1&gt;&lt;p&gt;algolia似乎是试用一段时间就不能用了,建议使用本地搜索&lt;br&gt;&lt;a href=&quot;/2017/11/14/hexo-next-%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2/#more&quot;&gt;hexo-next 本地搜索&lt;/a&gt;  &lt;/p&gt;
 &lt;p&gt;#next版本&lt;br&gt;我的版本号是&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# Theme version&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;version: &lt;span class=&quot;number&quot;&gt;5.1&lt;/span&gt;.2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;next5.0+版本集成了algolia 这样使配置algolia更简单&lt;/p&gt;
 &lt;h1 id=&quot;algolia账号申请&quot;&gt;&lt;a href=&quot;#algolia账号申请&quot; class=&quot;headerlink&quot; title=&quot;algolia账号申请&quot;&gt;&lt;/a&gt;algolia账号申请&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.algolia.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Algolia官网&lt;/a&gt;&lt;br&gt;

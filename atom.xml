@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.signalfire2017.com/"/>
-  <updated>2017-11-19T15:54:33.693Z</updated>
+  <updated>2017-11-19T15:57:58.594Z</updated>
   <id>https://blog.signalfire2017.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://blog.signalfire2017.com/2017/11/19/%E5%A4%A7%E6%95%B0%E6%8D%AE03-03-zookeeper-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%8F%8Aznode%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B1%BB%E5%9E%8B%E7%9B%91%E5%90%AC%E7%AD%89%E5%8A%9F%E8%83%BD/"/>
     <id>https://blog.signalfire2017.com/2017/11/19/大数据03-03-zookeeper-命令行客户端及znode数据结构类型监听等功能/</id>
     <published>2017-11-19T15:54:06.000Z</published>
-    <updated>2017-11-19T15:54:33.693Z</updated>
+    <updated>2017-11-19T15:57:58.594Z</updated>
     
     <content type="html"><![CDATA[<h1 id="进入客户端"><a href="#进入客户端" class="headerlink" title="进入客户端"></a>进入客户端</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">bin/zkCli.sh (连到本机)</div><div class="line">connect zk2:2181（连到zk2机器上）</div><div class="line"></div><div class="line">[zk: zk2:2181(CONNECTED) 3]</div></pre></td></tr></table></figure>
 <h1 id="zookeeper结构"><a href="#zookeeper结构" class="headerlink" title="zookeeper结构"></a>zookeeper结构</h1><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol>
@@ -39,8 +39,7 @@
 <li>客户端应用可以在节点上设置监视器（后续详细讲解）    </li>
 </ol>
 <h2 id="数据结构图"><a href="#数据结构图" class="headerlink" title="数据结构图"></a>数据结构图</h2><p><img src="http://ovasdkxqr.bkt.clouddn.com/image/blog/20171119232757.png" alt="20171119232757"></p>
-<p>##节点类型</p>
-<ol>
+<h2 id="节点类型"><a href="#节点类型" class="headerlink" title="节点类型"></a>节点类型</h2><ol>
 <li>Znode有两种类型：<ul>
 <li>短暂（ephemeral）（断开连接自己删除）</li>
 <li>持久（persistent）（断开连接不删除）</li>

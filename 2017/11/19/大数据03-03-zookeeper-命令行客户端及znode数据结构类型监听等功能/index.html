@@ -106,7 +106,7 @@
 <meta property="og:description" content="进入客户端1234bin/zkCli.sh (连到本机)connect zk2:2181（连到zk2机器上）[zk: zk2:2181(CONNECTED) 3] zookeeper结构特性 Zookeeper：一个leader，多个follower组成的集群 全局数据一致：每个server保存一份相同的数据副本，client无论连接到哪个server，数据都是一致的 分布式读写，更新请求转发，由">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ovasdkxqr.bkt.clouddn.com/image/blog/20171119232757.png">
-<meta property="og:updated_time" content="2017-11-19T15:54:33.693Z">
+<meta property="og:updated_time" content="2017-11-19T15:57:58.594Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据03-03-zookeeper-命令行客户端及znode数据结构类型监听等功能">
 <meta name="twitter:description" content="进入客户端1234bin/zkCli.sh (连到本机)connect zk2:2181（连到zk2机器上）[zk: zk2:2181(CONNECTED) 3] zookeeper结构特性 Zookeeper：一个leader，多个follower组成的集群 全局数据一致：每个server保存一份相同的数据副本，client无论连接到哪个server，数据都是一致的 分布式读写，更新请求转发，由">
@@ -423,8 +423,7 @@
 <li>客户端应用可以在节点上设置监视器（后续详细讲解）    </li>
 </ol>
 <h2 id="数据结构图"><a href="#数据结构图" class="headerlink" title="数据结构图"></a>数据结构图</h2><p><img src="http://ovasdkxqr.bkt.clouddn.com/image/blog/20171119232757.png" alt="20171119232757"></p>
-<p>##节点类型</p>
-<ol>
+<h2 id="节点类型"><a href="#节点类型" class="headerlink" title="节点类型"></a>节点类型</h2><ol>
 <li>Znode有两种类型：<ul>
 <li>短暂（ephemeral）（断开连接自己删除）</li>
 <li>持久（persistent）（断开连接不删除）</li>
@@ -649,7 +648,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#进入客户端"><span class="nav-number">1.</span> <span class="nav-text">进入客户端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#zookeeper结构"><span class="nav-number">2.</span> <span class="nav-text">zookeeper结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特性"><span class="nav-number">2.1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构"><span class="nav-number">2.2.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构图"><span class="nav-number">2.3.</span> <span class="nav-text">数据结构图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令行操作"><span class="nav-number">3.</span> <span class="nav-text">命令行操作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#进入客户端"><span class="nav-number">1.</span> <span class="nav-text">进入客户端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#zookeeper结构"><span class="nav-number">2.</span> <span class="nav-text">zookeeper结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特性"><span class="nav-number">2.1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构"><span class="nav-number">2.2.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构图"><span class="nav-number">2.3.</span> <span class="nav-text">数据结构图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#节点类型"><span class="nav-number">2.4.</span> <span class="nav-text">节点类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令行操作"><span class="nav-number">3.</span> <span class="nav-text">命令行操作</span></a></li></ol></div>
             
 
           </div>

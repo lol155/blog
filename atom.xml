@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.signalfire2017.com/"/>
-  <updated>2017-11-19T12:27:41.496Z</updated>
+  <updated>2017-11-19T12:28:24.848Z</updated>
   <id>https://blog.signalfire2017.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://blog.signalfire2017.com/2017/11/19/%E5%A4%A7%E6%95%B0%E6%8D%AE03-02-zookeeper-%E7%AE%80%E4%BB%8B/"/>
     <id>https://blog.signalfire2017.com/2017/11/19/大数据03-02-zookeeper-简介/</id>
     <published>2017-11-19T12:22:13.000Z</published>
-    <updated>2017-11-19T12:27:41.496Z</updated>
+    <updated>2017-11-19T12:28:24.848Z</updated>
     
     <content type="html"><![CDATA[<h1 id="学软件，框架"><a href="#学软件，框架" class="headerlink" title="学软件，框架"></a>学软件，框架</h1><p>需要明白三点</p>
 <ol>
@@ -28,8 +28,10 @@
 <li>核心工作机制流程功能：组成，角色</li>
 <li>怎么用</li>
 <li>再深一层，原理细节：选择性的深入了解，重要框架<a id="more"></a>
-<h1 id="zookeeper"><a href="#zookeeper" class="headerlink" title="zookeeper"></a>zookeeper</h1>zookeeper会用<h1 id="概念简介"><a href="#概念简介" class="headerlink" title="概念简介"></a>概念简介</h1>分布式<strong>协调服务</strong>，</li>
+</li>
 </ol>
+<h1 id="zookeeper"><a href="#zookeeper" class="headerlink" title="zookeeper"></a>zookeeper</h1><p>zookeeper会用</p>
+<h1 id="概念简介"><a href="#概念简介" class="headerlink" title="概念简介"></a>概念简介</h1><p>分布式<strong>协调服务</strong>，</p>
 <ul>
 <li>zookeeper是为别的分布式程序服务的</li>
 <li>Zookeeper<strong>本身就是一个分布式程序</strong>（只要有半数以上节点存活，zk就能正常服务）</li>

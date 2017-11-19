@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="大数据,zookeeper," />
 
 
 
@@ -97,16 +97,20 @@
 
 
 
-<meta name="description" content="如人饮水 冷暖自知">
-<meta property="og:type" content="website">
-<meta property="og:title" content="名字待定">
-<meta property="og:url" content="https://blog.signalfire2017.com/archives/2017/11/index.html">
+<meta name="description" content="进入客户端1234bin/zkCli.sh (连到本机)connect zk2:2181（连到zk2机器上）[zk: zk2:2181(CONNECTED) 3] zookeeper结构特性 Zookeeper：一个leader，多个follower组成的集群 全局数据一致：每个server保存一份相同的数据副本，client无论连接到哪个server，数据都是一致的 分布式读写，更新请求转发，由">
+<meta name="keywords" content="大数据,zookeeper">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大数据03-03-zookeeper-命令行客户端及znode数据结构类型监听等功能">
+<meta property="og:url" content="https://blog.signalfire2017.com/2017/11/19/大数据03-03-zookeeper-命令行客户端及znode数据结构类型监听等功能/index.html">
 <meta property="og:site_name" content="名字待定">
-<meta property="og:description" content="如人饮水 冷暖自知">
+<meta property="og:description" content="进入客户端1234bin/zkCli.sh (连到本机)connect zk2:2181（连到zk2机器上）[zk: zk2:2181(CONNECTED) 3] zookeeper结构特性 Zookeeper：一个leader，多个follower组成的集群 全局数据一致：每个server保存一份相同的数据副本，client无论连接到哪个server，数据都是一致的 分布式读写，更新请求转发，由">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ovasdkxqr.bkt.clouddn.com/image/blog/20171119232757.png">
+<meta property="og:updated_time" content="2017-11-19T15:54:33.693Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="名字待定">
-<meta name="twitter:description" content="如人饮水 冷暖自知">
+<meta name="twitter:title" content="大数据03-03-zookeeper-命令行客户端及znode数据结构类型监听等功能">
+<meta name="twitter:description" content="进入客户端1234bin/zkCli.sh (连到本机)connect zk2:2181（连到zk2机器上）[zk: zk2:2181(CONNECTED) 3] zookeeper结构特性 Zookeeper：一个leader，多个follower组成的集群 全局数据一致：每个server保存一份相同的数据副本，client无论连接到哪个server，数据都是一致的 分布式读写，更新请求转发，由">
+<meta name="twitter:image" content="http://ovasdkxqr.bkt.clouddn.com/image/blog/20171119232757.png">
 
 
 
@@ -136,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.signalfire2017.com/archives/2017/11/"/>
+  <link rel="canonical" href="https://blog.signalfire2017.com/2017/11/19/大数据03-03-zookeeper-命令行客户端及znode数据结构类型监听等功能/"/>
 
 
 
 
 
-  <title>归档 | 名字待定</title>
+  <title>大数据03-03-zookeeper-命令行客户端及znode数据结构类型监听等功能 | 名字待定</title>
   
 
 
@@ -161,7 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -299,411 +303,229 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.signalfire2017.com/2017/11/19/大数据03-03-zookeeper-命令行客户端及znode数据结构类型监听等功能/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="signalFire">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ovasdkxqr.bkt.clouddn.com/common/head1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="名字待定">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">大数据03-03-zookeeper-命令行客户端及znode数据结构类型监听等功能</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-19T23:54:06+08:00">
+                2017-11-19 23:54:06
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 20 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/19/大数据03-03-zookeeper-命令行客户端及znode数据结构类型监听等功能/" itemprop="url">
-              
-                <span itemprop="name">大数据03-03-zookeeper-命令行客户端及znode数据结构类型监听等功能</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-19T23:54:06+08:00"
-              content="2017-11-19 23:54:06" >
-          11-19
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/19/大数据03-02-zookeeper-简介/" itemprop="url">
-              
-                <span itemprop="name">大数据03-02-zookeeper 简介</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-19T20:22:13+08:00"
-              content="2017-11-19 20:22:13" >
-          11-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/14/hexo-next-本地搜索/" itemprop="url">
-              
-                <span itemprop="name">hexo-next 本地搜索</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-14T23:46:14+08:00"
-              content="2017-11-14 23:46:14" >
-          11-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h1 id="进入客户端"><a href="#进入客户端" class="headerlink" title="进入客户端"></a>进入客户端</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">bin/zkCli.sh (连到本机)</div><div class="line">connect zk2:2181（连到zk2机器上）</div><div class="line"></div><div class="line">[zk: zk2:2181(CONNECTED) 3]</div></pre></td></tr></table></figure>
+<h1 id="zookeeper结构"><a href="#zookeeper结构" class="headerlink" title="zookeeper结构"></a>zookeeper结构</h1><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol>
+<li>Zookeeper：一个leader，多个follower组成的集群</li>
+<li>全局数据一致：每个server保存一份相同的数据副本，client无论连接到哪个server，数据都是一致的</li>
+<li>分布式读写，更新请求转发，由leader实施</li>
+<li>更新请求顺序进行，来自同一个client的更新请求按其发送顺序依次执行</li>
+<li>数据更新原子性，一次数据更新要么成功，要么失败</li>
+<li>实时性，在一定时间范围内，client能读到最新数据</li>
+</ol>
+<a id="more"></a>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><ol>
+<li>层次化的目录结构，命名符合常规文件系统规范(见下图)</li>
+<li>每个节点在zookeeper中叫做znode,并且其有一个唯一的路径标识</li>
+<li>节点Znode可以包含数据和子节点（但是EPHEMERAL类型的节点不能有子节点，下一页详细讲解）</li>
+<li>客户端应用可以在节点上设置监视器（后续详细讲解）    </li>
+</ol>
+<h2 id="数据结构图"><a href="#数据结构图" class="headerlink" title="数据结构图"></a>数据结构图</h2><p><img src="http://ovasdkxqr.bkt.clouddn.com/image/blog/20171119232757.png" alt="20171119232757"></p>
+<p>##节点类型</p>
+<ol>
+<li>Znode有两种类型：<ul>
+<li>短暂（ephemeral）（断开连接自己删除）</li>
+<li>持久（persistent）（断开连接不删除）</li>
+</ul>
+</li>
+<li>Znode有四种形式的目录节点（默认是persistent ）<ul>
+<li>PERSISTENT</li>
+<li>PERSISTENT_SEQUENTIAL（持久序列/test0000000019 ）</li>
+<li>EPHEMERAL</li>
+<li>EPHEMERAL_SEQUENTIAL</li>
+</ul>
+</li>
+<li>创建znode时设置顺序标识，znode名称后会附加一个值，顺序号是一个单调递增的计数器，由父节点维护</li>
+<li>在分布式系统中，顺序号可以被用于为所有的事件进行全局排序，这样客户端可以通过顺序号推断事件的顺序</li>
+</ol>
+<h1 id="命令行操作"><a href="#命令行操作" class="headerlink" title="命令行操作"></a>命令行操作</h1><blockquote>
+<p>运行 zkCli.sh –server <ip>进入命令行工具</ip></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">[zk: zk2:2181(CONNECTED) 2] help</div><div class="line">ZooKeeper -server host:port cmd args</div><div class="line">        connect host:port</div><div class="line">        get path [watch]</div><div class="line">        ls path [watch]</div><div class="line">        set path data [version]</div><div class="line">        rmr path</div><div class="line">        delquota [-n|-b] path</div><div class="line">        quit </div><div class="line">        printwatches on|off</div><div class="line">        create [-s] [-e] path data acl</div><div class="line">        stat path [watch]</div><div class="line">        close </div><div class="line">        ls2 path [watch]</div><div class="line">        history </div><div class="line">        listquota path</div><div class="line">        setAcl path acl</div><div class="line">        getAcl path</div><div class="line">        sync path</div><div class="line">        redo cmdno</div><div class="line">        addauth scheme auth</div><div class="line">        delete path [version]</div><div class="line">        setquota -n|-b val path</div></pre></td></tr></table></figure>
+<ol>
+<li><p>使用 ls 命令来查看当前 ZooKeeper 中所包含的内容：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[zk: zk2:2181(CONNECTED) 3] ls /</div><div class="line">[zookeeper]</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建一个新的 znode ，使用 create /zk myData 。这个命令创建了一个新的 znode 节点“ zk ”以及与它<strong>关联的</strong>字符串：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[zk: zk2:2181(CONNECTED) 4] create /app 1234</div><div class="line">Created /app</div></pre></td></tr></table></figure>
+</li>
+<li><p>我们运行 get 命令来确认 znode 是否包含我们所创建的字符串：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">[zk: zk2:2181(CONNECTED) 5] get /app</div><div class="line">1234</div><div class="line">cZxid = 0x300000004</div><div class="line">ctime = Sun Nov 19 15:48:32 UTC 2017</div><div class="line">mZxid = 0x300000004</div><div class="line">mtime = Sun Nov 19 15:48:32 UTC 2017</div><div class="line">pZxid = 0x300000004</div><div class="line">cversion = 0</div><div class="line">dataVersion = 0</div><div class="line">aclVersion = 0</div><div class="line">ephemeralOwner = 0x0</div><div class="line">dataLength = 4</div><div class="line">numChildren = 0</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[zk: localhost:2181(CONNECTED) 4] get /app watch</div><div class="line">#监听这个节点的变化,当另外一个客户端改变/app,它会打出下面的</div><div class="line">#WATCHER::</div><div class="line">#WatchedEvent state:SyncConnected type:NodeDataChanged path:/app</div></pre></td></tr></table></figure>
+</li>
+<li><p>下面我们通过 set 命令来对 zk 所关联的字符串进行设置：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">[zk: zk2:2181(CONNECTED) 6] set /app 222</div><div class="line">cZxid = 0x300000004</div><div class="line">ctime = Sun Nov 19 15:48:32 UTC 2017</div><div class="line">mZxid = 0x300000005</div><div class="line">mtime = Sun Nov 19 15:50:46 UTC 2017</div><div class="line">pZxid = 0x300000004</div><div class="line">cversion = 0</div><div class="line">dataVersion = 1</div><div class="line">aclVersion = 0</div><div class="line">ephemeralOwner = 0x0</div><div class="line">dataLength = 3</div><div class="line">numChildren = 0</div><div class="line"></div><div class="line">[zk: zk2:2181(CONNECTED) 7] get /app</div><div class="line">222</div><div class="line">cZxid = 0x300000004</div><div class="line">ctime = Sun Nov 19 15:48:32 UTC 2017</div><div class="line">mZxid = 0x300000005</div><div class="line">mtime = Sun Nov 19 15:50:46 UTC 2017</div><div class="line">pZxid = 0x300000004</div><div class="line">cversion = 0</div><div class="line">dataVersion = 1</div><div class="line">aclVersion = 0</div><div class="line">ephemeralOwner = 0x0</div><div class="line">dataLength = 3</div><div class="line">numChildren = 0</div></pre></td></tr></table></figure>
+</li>
+<li><p>下面我们将刚才创建的 znode 删除：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[zk: zk2:2181(CONNECTED) 8] delete /app</div><div class="line">[zk: zk2:2181(CONNECTED) 9] ls /</div><div class="line">[zookeeper]</div></pre></td></tr></table></figure>
+</li>
+<li><p>删除节点：rmr</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[zk: zk2:2181(CONNECTED) 11] create /app2 12</div><div class="line">Created /app2</div><div class="line">[zk: zk2:2181(CONNECTED) 12] rmr /app2</div><div class="line">[zk: zk2:2181(CONNECTED) 13] ls /           </div><div class="line">[zookeeper]</div></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/14/大数据03-01-自动化部署脚本/" itemprop="url">
-              
-                <span itemprop="name">大数据03-01-自动化部署脚本</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-14T22:43:45+08:00"
-              content="2017-11-14 22:43:45" >
-          11-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/14/大数据02-01-1-linux本地yum库/" itemprop="url">
-              
-                <span itemprop="name">大数据02-01-1 linux本地yum库</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-14T21:58:01+08:00"
-              content="2017-11-14 21:58:01" >
-          11-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/06/大数据02-05-shell编程-awk命令/" itemprop="url">
-              
-                <span itemprop="name">大数据02-05-shell编程-awk命令</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-06T23:25:05+08:00"
-              content="2017-11-06 23:25:05" >
-          11-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/06/大数据02-04-shell编程-sed命令/" itemprop="url">
-              
-                <span itemprop="name">大数据02-04-shell编程-sed命令</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-06T23:02:56+08:00"
-              content="2017-11-06 23:02:56" >
-          11-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/06/大数据02-03 shell编程语法讲解/" itemprop="url">
-              
-                <span itemprop="name">大数据02-03 shell编程语法讲解</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-06T23:02:36+08:00"
-              content="2017-11-06 23:02:36" >
-          11-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/05/linux笔记-修改语言/" itemprop="url">
-              
-                <span itemprop="name">linux笔记-修改语言</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-05T23:39:47+08:00"
-              content="2017-11-05 23:39:47" >
-          11-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/04/vagrant 创建virtualBox虚拟机/" itemprop="url">
-              
-                <span itemprop="name">vagrant 创建virtualBox虚拟机</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-04T23:37:13+08:00"
-              content="2017-11-04 23:37:13" >
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/大数据/" rel="tag"># 大数据</a>
+          
+            <a href="/tags/zookeeper/" rel="tag"># zookeeper</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/19/大数据03-02-zookeeper-简介/" rel="next" title="大数据03-02-zookeeper 简介">
+                <i class="fa fa-chevron-left"></i> 大数据03-02-zookeeper 简介
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2017/11/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/11/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -711,6 +533,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -731,8 +557,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -804,6 +639,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#进入客户端"><span class="nav-number">1.</span> <span class="nav-text">进入客户端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#zookeeper结构"><span class="nav-number">2.</span> <span class="nav-text">zookeeper结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特性"><span class="nav-number">2.1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构"><span class="nav-number">2.2.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构图"><span class="nav-number">2.3.</span> <span class="nav-text">数据结构图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令行操作"><span class="nav-number">3.</span> <span class="nav-text">命令行操作</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -925,6 +776,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 

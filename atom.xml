@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.signalfire2017.com/"/>
-  <updated>2017-11-19T15:57:58.594Z</updated>
+  <updated>2017-11-21T15:22:41.735Z</updated>
   <id>https://blog.signalfire2017.com/</id>
   
   <author>
@@ -16,11 +16,44 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>大数据03-04-zookeeper集群自动启动脚本及export变量作用域的解析</title>
+    <link href="https://blog.signalfire2017.com/2017/11/21/%E5%A4%A7%E6%95%B0%E6%8D%AE03-04-zookeeper%E9%9B%86%E7%BE%A4%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC%E5%8F%8Aexport%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E8%A7%A3%E6%9E%90/"/>
+    <id>https://blog.signalfire2017.com/2017/11/21/大数据03-04-zookeeper集群自动启动脚本及export变量作用域的解析/</id>
+    <published>2017-11-21T15:22:14.000Z</published>
+    <updated>2017-11-21T15:22:41.735Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li>export A=1 定义的变量，会对自己所在的shell进程及其子进程生效</li>
+<li>B=1 定义的变量，只对自己所在的shell进程生效</li>
+<li>在script.sh中定义的变量，在当前登录的shell进程中 source script.sh 时，脚本中定义的变量也会进入当前登录的进程<a id="more"></a>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"start zkServer..."</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> 1 2 3</div><div class="line"><span class="keyword">do</span> </div><div class="line">ssh zk<span class="variable">$i</span> <span class="string">"source /etc/profile;/home/vagrant/apps/zookeeper/bin/zkServer.sh start"</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;export A=1 定义的变量，会对自己所在的shell进程及其子进程生效&lt;/li&gt;
+&lt;li&gt;B=1 定义的变量，只对自己所在的shell进程生效&lt;/li&gt;
+&lt;li&gt;在script.sh中定义的变量，在当前登录的shell进程中 source script.sh 时，脚本中定义的变量也会进入当前登录的进程
+    
+    </summary>
+    
+      <category term="学习" scheme="https://blog.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="大数据" scheme="https://blog.signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="zookeeper" scheme="https://blog.signalfire2017.com/tags/zookeeper/"/>
+    
+  </entry>
+  
+  <entry>
     <title>大数据03-03-zookeeper-命令行客户端及znode数据结构类型监听等功能</title>
     <link href="https://blog.signalfire2017.com/2017/11/19/%E5%A4%A7%E6%95%B0%E6%8D%AE03-03-zookeeper-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%8F%8Aznode%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B1%BB%E5%9E%8B%E7%9B%91%E5%90%AC%E7%AD%89%E5%8A%9F%E8%83%BD/"/>
     <id>https://blog.signalfire2017.com/2017/11/19/大数据03-03-zookeeper-命令行客户端及znode数据结构类型监听等功能/</id>
     <published>2017-11-19T15:54:06.000Z</published>
-    <updated>2017-11-19T15:57:58.594Z</updated>
+    <updated>2017-11-21T15:31:47.234Z</updated>
     
     <content type="html"><![CDATA[<h1 id="进入客户端"><a href="#进入客户端" class="headerlink" title="进入客户端"></a>进入客户端</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">bin/zkCli.sh (连到本机)</div><div class="line">connect zk2:2181（连到zk2机器上）</div><div class="line"></div><div class="line">[zk: zk2:2181(CONNECTED) 3]</div></pre></td></tr></table></figure>
 <h1 id="zookeeper结构"><a href="#zookeeper结构" class="headerlink" title="zookeeper结构"></a>zookeeper结构</h1><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol>
@@ -73,10 +106,10 @@
 <li><p>下面我们通过 set 命令来对 zk 所关联的字符串进行设置：</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">[zk: zk2:2181(CONNECTED) 6] set /app 222</div><div class="line">cZxid = 0x300000004</div><div class="line">ctime = Sun Nov 19 15:48:32 UTC 2017</div><div class="line">mZxid = 0x300000005</div><div class="line">mtime = Sun Nov 19 15:50:46 UTC 2017</div><div class="line">pZxid = 0x300000004</div><div class="line">cversion = 0</div><div class="line">dataVersion = 1</div><div class="line">aclVersion = 0</div><div class="line">ephemeralOwner = 0x0</div><div class="line">dataLength = 3</div><div class="line">numChildren = 0</div><div class="line"></div><div class="line">[zk: zk2:2181(CONNECTED) 7] get /app</div><div class="line">222</div><div class="line">cZxid = 0x300000004</div><div class="line">ctime = Sun Nov 19 15:48:32 UTC 2017</div><div class="line">mZxid = 0x300000005</div><div class="line">mtime = Sun Nov 19 15:50:46 UTC 2017</div><div class="line">pZxid = 0x300000004</div><div class="line">cversion = 0</div><div class="line">dataVersion = 1</div><div class="line">aclVersion = 0</div><div class="line">ephemeralOwner = 0x0</div><div class="line">dataLength = 3</div><div class="line">numChildren = 0</div></pre></td></tr></table></figure>
 </li>
-<li><p>下面我们将刚才创建的 znode 删除：</p>
+<li><p>下面我们将刚才创建的 znode 删除：只能删除没有子节点的节点</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[zk: zk2:2181(CONNECTED) 8] delete /app</div><div class="line">[zk: zk2:2181(CONNECTED) 9] ls /</div><div class="line">[zookeeper]</div></pre></td></tr></table></figure>
 </li>
-<li><p>删除节点：rmr</p>
+<li><p>删除节点：rmr 删除节点及其子节点</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[zk: zk2:2181(CONNECTED) 11] create /app2 12</div><div class="line">Created /app2</div><div class="line">[zk: zk2:2181(CONNECTED) 12] rmr /app2</div><div class="line">[zk: zk2:2181(CONNECTED) 13] ls /           </div><div class="line">[zookeeper]</div></pre></td></tr></table></figure>
 </li>
 </ol>
@@ -1696,33 +1729,6 @@ hexo server -g
     
     
       <category term="hexo" scheme="https://blog.signalfire2017.com/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>终于有了自己的博客</title>
-    <link href="https://blog.signalfire2017.com/2017/08/27/%E7%BB%88%E4%BA%8E%E6%9C%89%E4%BA%86%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://blog.signalfire2017.com/2017/08/27/终于有了自己的博客/</id>
-    <published>2017-08-27T06:05:14.000Z</published>
-    <updated>2017-09-03T15:22:52.890Z</updated>
-    
-    <content type="html"><![CDATA[<p>  终于有了自己的博客。感谢网络，感谢爱分享的人。<br>  搭建博客时候参考的帖子：<br>  <a href="http://visugar.com/2017/05/04/20170504SetUpHexoBlog/" target="_blank" rel="external">hexo从零开始到搭建完整</a><br>  <a href="http://www.jianshu.com/p/b7886271e21a" target="_blank" rel="external">Hexo安装和配置</a><br>  <a href="http://www.jianshu.com/p/35e197cb1273" target="_blank" rel="external">Hexo搭建Github-Pages博客填坑教程</a><br>  <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">主题nexT使用指南</a></p>
-<p>  自己碰到的坑  </p>
-<ul>
-<li>安装hexo后启动时,访问localhost:4000网页没反应 <code>替换端口号后解决了</code></li>
-<li>rss 链接出现问题,在<a href="http://www.jianshu.com/p/35e197cb1273" target="_blank" rel="external">Hexo搭建Github-Pages博客填坑教程</a> 中找到了解决办法</li>
-<li>hueman 主题下载后启动错误,这个没解决,替换找别的主题了。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;  终于有了自己的博客。感谢网络，感谢爱分享的人。&lt;br&gt;  搭建博客时候参考的帖子：&lt;br&gt;  &lt;a href=&quot;http://visugar.com/2017/05/04/20170504SetUpHexoBlog/&quot; target=&quot;_blank&quot; rel=&quot;exte
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://blog.signalfire2017.com/categories/essay/"/>
-    
     
   </entry>
   

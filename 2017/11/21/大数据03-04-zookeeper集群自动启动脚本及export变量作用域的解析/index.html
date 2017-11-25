@@ -105,7 +105,7 @@
 <meta property="og:site_name" content="名字待定">
 <meta property="og:description" content="export A=1 定义的变量，会对自己所在的shell进程及其子进程生效 B=1 定义的变量，只对自己所在的shell进程生效 在script.sh中定义的变量，在当前登录的shell进程中 source script.sh 时，脚本中定义的变量也会进入当前登录的进程">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-21T15:22:41.735Z">
+<meta property="og:updated_time" content="2017-11-25T17:09:36.081Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据03-04-zookeeper集群自动启动脚本及export变量作用域的解析">
 <meta name="twitter:description" content="export A=1 定义的变量，会对自己所在的shell进程及其子进程生效 B=1 定义的变量，只对自己所在的shell进程生效 在script.sh中定义的变量，在当前登录的shell进程中 source script.sh 时，脚本中定义的变量也会进入当前登录的进程">
@@ -411,6 +411,14 @@
 </li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"start zkServer..."</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> 1 2 3</div><div class="line"><span class="keyword">do</span> </div><div class="line">ssh zk<span class="variable">$i</span> <span class="string">"source /etc/profile;/home/vagrant/apps/zookeeper/bin/zkServer.sh start"</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<ol>
+<li><p>提示输入密码，配置免密登录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-keygen </div><div class="line">ssh-copy-id zk1</div></pre></td></tr></table></figure>
+</li>
+<li><p>可以放到/root/bin 目录下，该目录直接就在环境变量中，不需要配置，可以在其他位置执行了</p>
+</li>
+</ol>
+
       
     </div>
     
@@ -451,6 +459,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/26/大数据03-05-java-api/" rel="prev" title="大数据03-05-java api">
+                大数据03-05-java api <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -521,7 +533,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

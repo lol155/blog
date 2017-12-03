@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[大数据0405-java-socket]]></title>
+    <url>%2F2017%2F12%2F03%2F%E5%A4%A7%E6%95%B0%E6%8D%AE0405-java-socket%2F</url>
+    <content type="text"><![CDATA[直接上代码吧 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104package cn.itcast.bigdata.socket;import java.net.InetSocketAddress;import java.net.ServerSocket;import java.net.Socket;public class ServiceServer &#123; public static void main(String[] args) throws Exception &#123; // 创建一个serversocket，绑定到本机的8899端口上 ServerSocket server = new ServerSocket(); server.bind(new InetSocketAddress("localhost", 8899)); // 接受客户端的连接请求;accept是一个阻塞方法，会一直等待，到有客户端请求连接才返回 while (true) &#123; Socket socket = server.accept(); new Thread(new ServiceServerTask(socket)).start(); &#125; &#125;&#125;======================package cn.itcast.bigdata.socket;import java.io.BufferedReader;import java.io.InputStream;import java.io.InputStreamReader;import java.io.OutputStream;import java.io.PrintWriter;import java.net.Socket;public class ServiceClient &#123; public static void main(String[] args) throws Exception &#123; /*ServiceIterface service = ProxyUtils.getProxy(ServiceIterface.class,"methodA",hostname,port); Result = service.methodA(parameters);*/ // 向服务器发出请求建立连接 Socket socket = new Socket("localhost", 8899); // 从socket中获取输入输出流 InputStream inputStream = socket.getInputStream(); OutputStream outputStream = socket.getOutputStream(); PrintWriter pw = new PrintWriter(outputStream); pw.println("hello"); pw.flush(); BufferedReader br = new BufferedReader(new InputStreamReader(inputStream)); String result = br.readLine(); System.out.println(result); inputStream.close(); outputStream.close(); socket.close(); &#125;&#125;======================package cn.itcast.bigdata.socket;public class GetDataServiceImpl &#123; public String getData(String param)&#123; return "ok-"+param; &#125;&#125;=======================package cn.itcast.bigdata.socket;import java.io.BufferedReader;import java.io.IOException;import java.io.InputStream;import java.io.InputStreamReader;import java.io.OutputStream;import java.io.PrintWriter;import java.net.Socket;public class ServiceServerTask implements Runnable&#123; Socket socket ; InputStream in=null; OutputStream out = null; public ServiceServerTask(Socket socket) &#123; this.socket = socket; &#125; //业务逻辑：跟客户端进行数据交互 @Override public void run() &#123; try &#123; //从socket连接中获取到与client之间的网络通信输入输出流 in = socket.getInputStream(); out = socket.getOutputStream(); BufferedReader br = new BufferedReader(new InputStreamReader(in)); //从网络通信输入流中读取客户端发送过来的数据 //注意：socketinputstream的读数据的方法都是阻塞的 String param = br.readLine(); /** * 作业： * 将以下业务调用逻辑写成更加通用的：可以根据客户端发过来的调用类名、调用方法名、调用该参数来灵活调用 * * 《反射》 * */ GetDataServiceImpl getDataServiceImpl = new GetDataServiceImpl(); String result = getDataServiceImpl.getData(param); //将调用结果写到sokect的输出流中，以发送给客户端 PrintWriter pw = new PrintWriter(out); pw.println(result); pw.flush(); &#125; catch (IOException e) &#123; e.printStackTrace(); &#125;finally&#123; try &#123; in.close(); out.close(); socket.close(); &#125; catch (IOException e) &#123; e.printStackTrace(); &#125; &#125; &#125;&#125;]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>java</tag>
+        <tag>socket</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[大数据0404-java动态代理]]></title>
     <url>%2F2017%2F12%2F03%2F%E5%A4%A7%E6%95%B0%E6%8D%AE0404-java%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%2F</url>
     <content type="text"><![CDATA[动态代理在之前的代码调用阶段，我们用action调用service的方法实现业务即可。由于之前在service中实现的业务可能不能够满足当先客户的要求，需要我们重新修改service中的方法，但是service的方法不只在我们这个模块使用，在其他模块也在调用，其他模块调用的时候，现有的service方法已经能够满足业务需求，所以我们不能只为了我们的业务而修改service，导致其他模块授影响。那怎么办呢？可以通过动态代理的方式，扩展我们的service中的方法实现，使得在原有的方法中增加更多的业务，而不是实际修改service中的方法，这种实现技术就叫做动态代理。动态代理：在不修改原业务的基础上，基于原业务方法，进行重新的扩展，实现新的业务。 例如下面的例子： 旧业务买家调用action，购买衣服，衣服在数据库的标价为50元，购买流程就是简单的调用。 新业务在原先的价格上可以使用优惠券，但是这个功能在以前没有实现过，我们通过代理类，代理了原先的接口方法，在这个方法的基础上，修改了返回值。 代理实现流程： 书写代理类和代理方法，在代理方法中实现代理Proxy.newProxyInstance 代理中需要的参数分别为：被代理的类的类加载器soneObjectclass.getClassLoader()，被代理类的所有实现接口new Class[] { Interface.class }，句柄方法new InvocationHandler() 在句柄方法中复写invoke方法，invoke方法的输入有3个参数Object proxy（代理类对象）, Method method（被代理类的方法）,Object[] args（被代理类方法的传入参数），在这个方法中，我们可以定制化的开发新的业务。 获取代理类，强转成被代理的接口 最后，我们可以像没被代理一样，调用接口的认可方法，方法被调用后，方法名和参数列表将被传入代理类的invoke方法中，进行新业务的逻辑流程。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677原业务接口IBoss=================================/** * 这是一个业务的接口，这个接口中的业务就是返回衣服的价格 * @author wilson * */public interface IBoss &#123;//接口 int yifu(String size);&#125;原业务实现类====================================public class Boss implements IBoss&#123; public int yifu(String size)&#123; System.err.println("天猫小强旗舰店，老板给客户发快递----衣服型号："+size); //这件衣服的价钱，从数据库读取 return 50; &#125; public void kuzi()&#123; System.err.println("天猫小强旗舰店，老板给客户发快递----裤子"); &#125;&#125;原业务调用====================================public class SaleAction &#123; @Test public void saleByBossSelf() throws Exception &#123; IBoss boss = new Boss(); System.out.println("老板自营！"); int money = boss.yifu("xxl"); System.out.println("衣服成交价：" + money); &#125;&#125;代理类========================================import java.lang.reflect.InvocationHandler;import java.lang.reflect.Method;import java.lang.reflect.Proxy;public class ProxyBoss &#123; /** * 对接口方法进行代理 */ @SuppressWarnings("unchecked") public static &lt;T&gt; T getProxy(final int discountCoupon, final Class&lt;?&gt; interfaceClass, final Class&lt;?&gt; implementsClass) throws Exception &#123; return (T) Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class[] &#123; interfaceClass &#125;, new InvocationHandler() &#123; public Object invoke(Object proxy, Method method, Object[] args) throws Throwable &#123; Integer returnValue = (Integer) method.invoke( implementsClass.newInstance(), args);// 调用原始对象以后返回的值 return returnValue - discountCoupon; &#125; &#125;); &#125;&#125;新业务调用=======================================import org.junit.Test;import cn.itcast_05_proxy.proxyclass.ProxyBoss;import cn.itcast_05_proxy.service.IBoss;import cn.itcast_05_proxy.service.impl.Boss;/** * 什么是动态代理？ 简单的写一个模板接口，剩下的个性化工作，好给动态代理来完成！ */public class ProxySaleAction &#123; /** *使用代理，在这个代理中，只代理了Boss的yifu方法 *定制化业务，可以改变原接口的参数、返回值等 */ @Test public void saleByProxy() throws Exception &#123; IBoss boss = ProxyBoss.getProxy(10,IBoss.class,Boss.class);// 将代理的方法实例化成接口 //IBoss boss = new Boss();// 将代理的方法实例化成接口 System.out.println("代理经营！"); int money = boss.yifu("xxl");// 调用接口的方法，实际上调用方式没有变 System.out.println("衣服成交价：" + money); &#125;&#125;]]></content>
@@ -299,8 +312,8 @@
         <category>工具</category>
       </categories>
       <tags>
-        <tag>vscode</tag>
         <tag>快捷键</tag>
+        <tag>vscode</tag>
       </tags>
   </entry>
   <entry>
@@ -311,8 +324,8 @@
         <category>工具</category>
       </categories>
       <tags>
-        <tag>快捷键</tag>
         <tag>idea</tag>
+        <tag>快捷键</tag>
       </tags>
   </entry>
   <entry>

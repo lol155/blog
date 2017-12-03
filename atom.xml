@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.signalfire2017.com/"/>
-  <updated>2017-12-03T10:30:22.149Z</updated>
+  <updated>2017-12-03T15:17:24.365Z</updated>
   <id>https://blog.signalfire2017.com/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>大数据0405-java-socket</title>
+    <link href="https://blog.signalfire2017.com/2017/12/03/%E5%A4%A7%E6%95%B0%E6%8D%AE0405-java-socket/"/>
+    <id>https://blog.signalfire2017.com/2017/12/03/大数据0405-java-socket/</id>
+    <published>2017-12-03T15:14:47.000Z</published>
+    <updated>2017-12-03T15:17:24.365Z</updated>
+    
+    <content type="html"><![CDATA[<p>直接上代码吧<br><a id="more"></a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> cn.itcast.bigdata.socket;</div><div class="line"><span class="keyword">import</span> java.net.InetSocketAddress;</div><div class="line"><span class="keyword">import</span> java.net.ServerSocket;</div><div class="line"><span class="keyword">import</span> java.net.Socket;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServiceServer</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">		<span class="comment">// 创建一个serversocket，绑定到本机的8899端口上</span></div><div class="line">		ServerSocket server = <span class="keyword">new</span> ServerSocket();</div><div class="line">		server.bind(<span class="keyword">new</span> InetSocketAddress(<span class="string">"localhost"</span>, <span class="number">8899</span>));</div><div class="line">		<span class="comment">// 接受客户端的连接请求;accept是一个阻塞方法，会一直等待，到有客户端请求连接才返回</span></div><div class="line">		<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</div><div class="line">			Socket socket = server.accept();</div><div class="line">			<span class="keyword">new</span> Thread(<span class="keyword">new</span> ServiceServerTask(socket)).start();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">======================</div><div class="line"><span class="keyword">package</span> cn.itcast.bigdata.socket;</div><div class="line"><span class="keyword">import</span> java.io.BufferedReader;</div><div class="line"><span class="keyword">import</span> java.io.InputStream;</div><div class="line"><span class="keyword">import</span> java.io.InputStreamReader;</div><div class="line"><span class="keyword">import</span> java.io.OutputStream;</div><div class="line"><span class="keyword">import</span> java.io.PrintWriter;</div><div class="line"><span class="keyword">import</span> java.net.Socket;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServiceClient</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">		<span class="comment">/*ServiceIterface service = ProxyUtils.getProxy(ServiceIterface.class,"methodA",hostname,port);</span></div><div class="line"><span class="comment">		Result = service.methodA(parameters);*/</span></div><div class="line">		<span class="comment">// 向服务器发出请求建立连接</span></div><div class="line">		Socket socket = <span class="keyword">new</span> Socket(<span class="string">"localhost"</span>, <span class="number">8899</span>);</div><div class="line">		<span class="comment">// 从socket中获取输入输出流</span></div><div class="line">		InputStream inputStream = socket.getInputStream();</div><div class="line">		OutputStream outputStream = socket.getOutputStream();</div><div class="line">		PrintWriter pw = <span class="keyword">new</span> PrintWriter(outputStream);</div><div class="line">		pw.println(<span class="string">"hello"</span>);</div><div class="line">		pw.flush();</div><div class="line">		BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(inputStream));</div><div class="line">		String result = br.readLine();</div><div class="line">		System.out.println(result);</div><div class="line">		inputStream.close();</div><div class="line">		outputStream.close();</div><div class="line">		socket.close();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">======================</div><div class="line"><span class="keyword">package</span> cn.itcast.bigdata.socket;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GetDataServiceImpl</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getData</span><span class="params">(String param)</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"ok-"</span>+param;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">=======================</div><div class="line"><span class="keyword">package</span> cn.itcast.bigdata.socket;</div><div class="line"><span class="keyword">import</span> java.io.BufferedReader;</div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> java.io.InputStream;</div><div class="line"><span class="keyword">import</span> java.io.InputStreamReader;</div><div class="line"><span class="keyword">import</span> java.io.OutputStream;</div><div class="line"><span class="keyword">import</span> java.io.PrintWriter;</div><div class="line"><span class="keyword">import</span> java.net.Socket;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServiceServerTask</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</div><div class="line">	Socket socket ;</div><div class="line">	InputStream in=<span class="keyword">null</span>;</div><div class="line">	OutputStream out = <span class="keyword">null</span>;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ServiceServerTask</span><span class="params">(Socket socket)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.socket = socket;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">//业务逻辑：跟客户端进行数据交互</span></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">		 <span class="keyword">try</span> &#123;</div><div class="line">			<span class="comment">//从socket连接中获取到与client之间的网络通信输入输出流 </span></div><div class="line">			in = socket.getInputStream();</div><div class="line">			out = socket.getOutputStream();</div><div class="line">			BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(in));</div><div class="line">			<span class="comment">//从网络通信输入流中读取客户端发送过来的数据</span></div><div class="line">			<span class="comment">//注意：socketinputstream的读数据的方法都是阻塞的 </span></div><div class="line">			String param = br.readLine();</div><div class="line">			<span class="comment">/**</span></div><div class="line"><span class="comment">			 * 作业：</span></div><div class="line"><span class="comment">			 * 将以下业务调用逻辑写成更加通用的：可以根据客户端发过来的调用类名、调用方法名、调用该参数来灵活调用</span></div><div class="line"><span class="comment">			 * </span></div><div class="line"><span class="comment">			 * 《反射》</span></div><div class="line"><span class="comment">			 * </span></div><div class="line"><span class="comment">			 */</span></div><div class="line">			GetDataServiceImpl getDataServiceImpl = <span class="keyword">new</span> GetDataServiceImpl();</div><div class="line">			String result = getDataServiceImpl.getData(param);</div><div class="line">			<span class="comment">//将调用结果写到sokect的输出流中，以发送给客户端</span></div><div class="line">			PrintWriter pw = <span class="keyword">new</span> PrintWriter(out);</div><div class="line">			pw.println(result);</div><div class="line">			pw.flush();</div><div class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;<span class="keyword">finally</span>&#123;</div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				in.close();</div><div class="line">				out.close();</div><div class="line">				socket.close();</div><div class="line">			&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;直接上代码吧&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="https://blog.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="大数据" scheme="https://blog.signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="java" scheme="https://blog.signalfire2017.com/tags/java/"/>
+    
+      <category term="socket" scheme="https://blog.signalfire2017.com/tags/socket/"/>
+    
+  </entry>
   
   <entry>
     <title>大数据0404-java动态代理</title>
@@ -1541,62 +1569,6 @@ tmpfs                    245M       0  245M    0% /sys/fs/cgroup
       <category term="linux" scheme="https://blog.signalfire2017.com/tags/linux/"/>
     
       <category term="centos7" scheme="https://blog.signalfire2017.com/tags/centos7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>大数据02-02 linux命令继续学习 yum</title>
-    <link href="https://blog.signalfire2017.com/2017/11/01/%E5%A4%A7%E6%95%B0%E6%8D%AE02-02-linux%E5%91%BD%E4%BB%A4%E7%BB%A7%E7%BB%AD%E5%AD%A6%E4%B9%A0-yum/"/>
-    <id>https://blog.signalfire2017.com/2017/11/01/大数据02-02-linux命令继续学习-yum/</id>
-    <published>2017-11-01T15:50:39.000Z</published>
-    <updated>2017-11-14T15:12:52.333Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="YUM的常用命令"><a href="#YUM的常用命令" class="headerlink" title="YUM的常用命令"></a>YUM的常用命令</h1><p>安装httpd并确认安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum instll -y httpd</div></pre></td></tr></table></figure></p>
-<p>列出所有可用的package和package组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum list</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>清除所有缓冲数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum clean all</div></pre></td></tr></table></figure></p>
-<p>列出一个包所有依赖的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum deplist httpd</div></pre></td></tr></table></figure></p>
-<p>删除httpd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum remove httpd</div></pre></td></tr></table></figure></p>
-<h1 id="配置本地yum源"><a href="#配置本地yum源" class="headerlink" title="配置本地yum源"></a>配置本地yum源</h1><p>cd /etc/yum.repos.d </p>
-<h1 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h1><p>解压安装包</p>
-<blockquote>
-<p>tar -zxvf jdk-7u45-linux-x64.tar.gz -C apps/</p>
-</blockquote>
-<p>然后修改环境变量</p>
-<blockquote>
-<p>vi /etc/profile</p>
-</blockquote>
-<p>在文件最后添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/root/apps/jdk1.7.0_45</div><div class="line">export PATH=$PATH:$JAVA_HOME/bin</div></pre></td></tr></table></figure></p>
-<p>保存退出</p>
-<p>然后重新加载环境变量</p>
-<blockquote>
-<p>source /etc/profile</p>
-</blockquote>
-<h1 id="装mysql"><a href="#装mysql" class="headerlink" title="装mysql"></a>装mysql</h1><h1 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h1><ol>
-<li>上传tomcat包</li>
-<li>解压</li>
-<li>启动</li>
-<li>测试访问</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;YUM的常用命令&quot;&gt;&lt;a href=&quot;#YUM的常用命令&quot; class=&quot;headerlink&quot; title=&quot;YUM的常用命令&quot;&gt;&lt;/a&gt;YUM的常用命令&lt;/h1&gt;&lt;p&gt;安装httpd并确认安装&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;yum instll -y httpd&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;列出所有可用的package和package组&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;yum list&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="学习" scheme="https://blog.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="大数据" scheme="https://blog.signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-      <category term="linux" scheme="https://blog.signalfire2017.com/tags/linux/"/>
-    
-      <category term="centos7" scheme="https://blog.signalfire2017.com/tags/centos7/"/>
-    
-      <category term="linux命令" scheme="https://blog.signalfire2017.com/tags/linux%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   

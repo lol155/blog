@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="微服务," />
 
 
 
@@ -97,16 +97,21 @@
 
 
 
-<meta name="description" content="如人饮水 冷暖自知">
-<meta property="og:type" content="website">
-<meta property="og:title" content="名字待定">
-<meta property="og:url" content="https://blog.signalfire2017.com/archives/2017/page/4/index.html">
+<meta name="description" content="单体应用架构存在的问题 复杂性高   包含模块多 模块边界模糊 依赖关系不清 代码质量残次不齐等等   技术债务 部署频率低   功能变更或缺陷修复都要重新部署整个应用。 全量部署 耗时长。影响范围大、风险高。   可靠性差   一个bug可能会导致整个系统的崩溃   扩展能力受限   只能整体扩展，无法根据业务模块进行伸缩。   阻碍技术创新   一般使用统一的技术平台或方案解决所有问题。例如一">
+<meta name="keywords" content="微服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微服务框架与实战-笔记01-概述">
+<meta property="og:url" content="https://blog.signalfire2017.com/2018/01/05/微服务框架与实战-笔记01-概述/index.html">
 <meta property="og:site_name" content="名字待定">
-<meta property="og:description" content="如人饮水 冷暖自知">
+<meta property="og:description" content="单体应用架构存在的问题 复杂性高   包含模块多 模块边界模糊 依赖关系不清 代码质量残次不齐等等   技术债务 部署频率低   功能变更或缺陷修复都要重新部署整个应用。 全量部署 耗时长。影响范围大、风险高。   可靠性差   一个bug可能会导致整个系统的崩溃   扩展能力受限   只能整体扩展，无法根据业务模块进行伸缩。   阻碍技术创新   一般使用统一的技术平台或方案解决所有问题。例如一">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ovasdkxqr.bkt.clouddn.com/image/blog/20181522357.png">
+<meta property="og:image" content="http://ovasdkxqr.bkt.clouddn.com//image/blog/201815224722.jpg">
+<meta property="og:updated_time" content="2018-01-05T14:47:48.052Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="名字待定">
-<meta name="twitter:description" content="如人饮水 冷暖自知">
+<meta name="twitter:title" content="微服务框架与实战-笔记01-概述">
+<meta name="twitter:description" content="单体应用架构存在的问题 复杂性高   包含模块多 模块边界模糊 依赖关系不清 代码质量残次不齐等等   技术债务 部署频率低   功能变更或缺陷修复都要重新部署整个应用。 全量部署 耗时长。影响范围大、风险高。   可靠性差   一个bug可能会导致整个系统的崩溃   扩展能力受限   只能整体扩展，无法根据业务模块进行伸缩。   阻碍技术创新   一般使用统一的技术平台或方案解决所有问题。例如一">
+<meta name="twitter:image" content="http://ovasdkxqr.bkt.clouddn.com/image/blog/20181522357.png">
 
 
 
@@ -136,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.signalfire2017.com/archives/2017/page/4/"/>
+  <link rel="canonical" href="https://blog.signalfire2017.com/2018/01/05/微服务框架与实战-笔记01-概述/"/>
 
 
 
 
 
-  <title>归档 | 名字待定</title>
+  <title>微服务框架与实战-笔记01-概述 | 名字待定</title>
   
 
 
@@ -161,7 +166,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -299,77 +304,263 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 目前共计 35 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.signalfire2017.com/2018/01/05/微服务框架与实战-笔记01-概述/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="signalFire">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ovasdkxqr.bkt.clouddn.com/common/head1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="名字待定">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/08/27/终于有了自己的博客/" itemprop="url">
-              
-                <span itemprop="name">终于有了自己的博客</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">微服务框架与实战-笔记01-概述</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-27T14:05:14+08:00"
-              content="2017-08-27 14:05:14" >
-          08-27
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-05T22:42:27+08:00">
+                2018-01-05 22:42:27
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <h1 id="单体应用架构存在的问题"><a href="#单体应用架构存在的问题" class="headerlink" title="单体应用架构存在的问题"></a>单体应用架构存在的问题</h1><ol>
+<li>复杂性高  <ul>
+<li>包含模块多</li>
+<li>模块边界模糊</li>
+<li>依赖关系不清</li>
+<li>代码质量残次不齐等等</li>
+</ul>
+</li>
+<li>技术债务</li>
+<li>部署频率低  <ul>
+<li>功能变更或缺陷修复都要重新部署整个应用。</li>
+<li>全量部署 耗时长。影响范围大、风险高。</li>
+</ul>
+</li>
+<li>可靠性差  <ul>
+<li>一个bug可能会导致整个系统的崩溃</li>
+</ul>
+</li>
+<li>扩展能力受限  <ul>
+<li>只能整体扩展，无法根据业务模块进行伸缩。</li>
+</ul>
+</li>
+<li>阻碍技术创新  <ul>
+<li>一般使用统一的技术平台或方案解决所有问题。例如一个使用struts2的100万行代码的单体应用，如果想换成springMVC，成本是非常高的。</li>
+</ul>
+</li>
+</ol>
+<h1 id="微服务简介"><a href="#微服务简介" class="headerlink" title="微服务简介"></a>微服务简介</h1><p>并没有严格的定义，将一个单一应用程序开发为一组小型服务的方法。构建的是分布式系统。</p>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol>
+<li>每个服务运行在自己的进程中</li>
+<li>一系列服务共同构建起整个项目</li>
+<li>服务针对独立业务，只关注某个特定功能</li>
+<li>服务间通信采用轻量级通信机制（如http资源api）</li>
+<li>可以使用不同的语言，不同的存储</li>
+<li>全自动部署机制</li>
+</ol>
+<h1 id="有点"><a href="#有点" class="headerlink" title="有点"></a>有点</h1><ol>
+<li>易于开发维护</li>
+<li>单个服务启动快</li>
+<li>局部修改易部署</li>
+<li>技术栈不受限</li>
+<li>按需伸缩</li>
+</ol>
+<h1 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h1><ul>
+<li>运维要求高<ul>
+<li>需要保证几十个甚至上百个服务的正常运行与写作</li>
+</ul>
+</li>
+<li>分布式固有的复杂性</li>
+<li>接口调整成本搞</li>
+<li>重复劳动 <ul>
+<li>重复功能不足以分解为一个微服务，可以封装为公共组件，但是多语言就不一定行得通</li>
+</ul>
+</li>
+</ul>
+<h1 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h1><ul>
+<li>单一职责原则</li>
+<li>服务自治原则 <ul>
+<li>治具备独立的业务能力、依赖与运行环境。</li>
+</ul>
+</li>
+<li>轻量级通信机制 <ul>
+<li>体量轻 </li>
+<li>跨语言 </li>
+<li>跨平台 </li>
+<li>常用的有REST AMQP STOMP MQTT</li>
+</ul>
+</li>
+<li>微服务力度</li>
+</ul>
+<p><code>康威定律</code>：设计系统的组织，其产生的设计等同于组织之内、组织之间的沟通结构。看看下面的图片（来源于互联网，侵删），再想想Apple的产品、微软的产品设计，就能形象生动的理解这句话。</p>
+<p><img src="http://ovasdkxqr.bkt.clouddn.com/image/blog/20181522357.png" alt="20181522357"></p>
+<p>用通俗的说法就是：<code>组织形式等同系统设计</code>。</p>
+<h1 id="如何实现微服务架构"><a href="#如何实现微服务架构" class="headerlink" title="如何实现微服务架构"></a>如何实现微服务架构</h1><h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><p>从开发和运行平台两个维度考虑：</p>
+<ul>
+<li>开发框架<ul>
+<li>spring cloud</li>
+<li>dubbo</li>
+<li>dropwizard </li>
+<li>armada</li>
+</ul>
+</li>
+<li>运行平台<ul>
+<li>并不绑定运行平台</li>
+<li>PCServer</li>
+<li>阿里云</li>
+<li>aws</li>
+<li>Docker<h1 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h1><img src="http://ovasdkxqr.bkt.clouddn.com//image/blog/201815224722.jpg" alt="201815224722"></li>
+</ul>
+</li>
+</ul>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/微服务/" rel="tag"># 微服务</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/03/aws-vpn/" rel="next" title="aws-vpn">
+                <i class="fa fa-chevron-left"></i> aws-vpn
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/07/使用多个git账户/" rel="prev" title="使用多个git账户">
+                使用多个git账户 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2017/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2017/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2017/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -377,6 +568,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -399,8 +594,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -472,6 +676,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#单体应用架构存在的问题"><span class="nav-number">1.</span> <span class="nav-text">单体应用架构存在的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#微服务简介"><span class="nav-number">2.</span> <span class="nav-text">微服务简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特性"><span class="nav-number">2.1.</span> <span class="nav-text">特性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有点"><span class="nav-number">3.</span> <span class="nav-text">有点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#挑战"><span class="nav-number">4.</span> <span class="nav-text">挑战</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计原则"><span class="nav-number">5.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何实现微服务架构"><span class="nav-number">6.</span> <span class="nav-text">如何实现微服务架构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#技术选型"><span class="nav-number">6.1.</span> <span class="nav-text">技术选型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#架构图"><span class="nav-number">7.</span> <span class="nav-text">架构图</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -586,6 +806,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.signalfire2017.com/"/>
-  <updated>2018-01-09T15:13:18.565Z</updated>
+  <updated>2018-01-09T15:24:15.937Z</updated>
   <id>https://blog.signalfire2017.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>微服务框架与实战-笔记02-微服务开发矿建-SpringCloud</title>
-    <link href="https://blog.signalfire2017.com/2018/01/09/%E5%BE%AE%E6%9C%8D%E5%8A%A1/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%AE%9E%E6%88%98-%E7%AC%94%E8%AE%B002-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BC%80%E5%8F%91%E7%9F%BF%E5%BB%BA-SpringCloud/"/>
-    <id>https://blog.signalfire2017.com/2018/01/09/微服务/微服务框架与实战-笔记02-微服务开发矿建-SpringCloud/</id>
+    <title>微服务框架与实战-笔记02-微服务开发框架-SpringCloud</title>
+    <link href="https://blog.signalfire2017.com/2018/01/09/%E5%BE%AE%E6%9C%8D%E5%8A%A1/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%AE%9E%E6%88%98-%E7%AC%94%E8%AE%B002-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6-SpringCloud/"/>
+    <id>https://blog.signalfire2017.com/2018/01/09/微服务/微服务框架与实战-笔记02-微服务开发框架-SpringCloud/</id>
     <published>2018-01-09T15:12:17.000Z</published>
-    <updated>2018-01-09T15:13:18.565Z</updated>
+    <updated>2018-01-09T15:24:15.937Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Spring-Cloud-简介"><a href="#Spring-Cloud-简介" class="headerlink" title="Spring Cloud 简介"></a>Spring Cloud 简介</h1><ul>
 <li>在SpringBoot基础上构建的，用于快速构建分布式系统的通用模式工具集。</li>
@@ -209,7 +209,7 @@
       <category term="学习" scheme="https://blog.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="大数据" scheme="https://blog.signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+      <category term="微服务" scheme="https://blog.signalfire2017.com/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
@@ -570,11 +570,11 @@
       <category term="玩" scheme="https://blog.signalfire2017.com/categories/%E7%8E%A9/"/>
     
     
-      <category term="生活" scheme="https://blog.signalfire2017.com/tags/%E7%94%9F%E6%B4%BB/"/>
-    
       <category term="北京" scheme="https://blog.signalfire2017.com/tags/%E5%8C%97%E4%BA%AC/"/>
     
       <category term="游玩" scheme="https://blog.signalfire2017.com/tags/%E6%B8%B8%E7%8E%A9/"/>
+    
+      <category term="生活" scheme="https://blog.signalfire2017.com/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
@@ -816,11 +816,11 @@
     
       <category term="大数据" scheme="https://blog.signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
-      <category term="java" scheme="https://blog.signalfire2017.com/tags/java/"/>
-    
       <category term="JMS" scheme="https://blog.signalfire2017.com/tags/JMS/"/>
     
       <category term="activeMQ" scheme="https://blog.signalfire2017.com/tags/activeMQ/"/>
+    
+      <category term="java" scheme="https://blog.signalfire2017.com/tags/java/"/>
     
   </entry>
   

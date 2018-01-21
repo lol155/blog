@@ -105,7 +105,7 @@
 <meta property="og:site_name" content="名字待定">
 <meta property="og:description" content="这本书整体的看了一遍，具体细节还没有实践。先做个骨架，用的时候再丰富下。书中按照下面的顺序进行整合。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-21T15:53:58.241Z">
+<meta property="og:updated_time" content="2018-01-21T16:09:40.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微服务框架与实战-总体概览">
 <meta name="twitter:description" content="这本书整体的看了一遍，具体细节还没有实践。先做个骨架，用的时候再丰富下。书中按照下面的顺序进行整合。">
@@ -405,128 +405,122 @@
 
       
         <p>这本书整体的看了一遍，具体细节还没有实践。先做个骨架，用的时候再丰富下。书中按照下面的顺序进行整合。<br><a id="more"></a></p>
+<style>
+table th:first-of-type {
+    width: 15px;
+}
+
+table th:nth-of-type(2) {
+    width: 20%;
+}
+
+table th:nth-of-type(3) {
+    width: 30%;
+}
+</style>
+
 <table>
 <thead>
 <tr>
-<th>序号</th>
-<th>所属章</th>
+<th>章</th>
 <th>组件</th>
 <th>功能</th>
 <th>描述</th>
-<th>相似组件 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td> 1</td>
-<td>3</td>
+<td> 3</td>
 <td>spring-boot</td>
 <td>基础业务开发</td>
 <td></td>
 </tr>
 <tr>
-<td> 2</td>
-<td></td>
 <td></td>
 <td>spring-boot-actuator</td>
 <td>提供很多监控端点</td>
 <td></td>
 </tr>
 <tr>
-<td> 3</td>
-<td>4</td>
+<td> 4</td>
 <td>Eureka</td>
 <td>服务的注册与发现</td>
-<td>集成于spring-cloud-netflix <br>是Netflix开源的服务发现组件<br>基于REST的服务</td>
-<td>Zookeeper，Consul</td>
+<td>集成于spring-cloud-netflix <br>是Netflix开源的服务发现组件<br>基于REST的服务<br>相似组件： Zookeeper，Consul</td>
 </tr>
 <tr>
-<td> 4</td>
-<td>5</td>
+<td> 5</td>
 <td>Ribbon</td>
 <td>客户端测负载均衡</td>
 <td>Netflix发布的负载均衡器<br>有助于控制HTTP和TCP客户端的行为。</td>
 </tr>
 <tr>
-<td> 5</td>
 <td></td>
 <td>Feign</td>
 <td>实现声明式REST调用</td>
 <td>Netflix开发的声明式、模板化的HTTP客户端。</td>
 </tr>
 <tr>
-<td> 6</td>
 <td></td>
 <td>Hystrix</td>
 <td>服务容错处理</td>
 <td></td>
 </tr>
 <tr>
-<td> 7</td>
 <td></td>
 <td>Turbine</td>
 <td>聚合Hystrix监控数据的工具</td>
 <td>将所有相关 /hystrix.stream 端点的数据聚合到一个聚合的/turbine.stream中<br>让集群的监控更加方便</td>
 </tr>
 <tr>
-<td> 8</td>
 <td></td>
 <td>RabbitMQ</td>
 <td>消息中间件</td>
 <td>解决网络故障问题（例如微服务与Turbine网络不通）</td>
 </tr>
 <tr>
-<td> 9</td>
-<td>8</td>
+<td> 8</td>
 <td>Zuul</td>
 <td>构建微服务网关</td>
 <td>Netflix开源的微服务网关<br>可以和Eureka、Ribbon、Hystrix等组件配合使用<br>核心是一系列的过滤器</td>
 </tr>
 <tr>
-<td> 10</td>
 <td></td>
 <td>Sidecar</td>
 <td>整合非JVM微服务</td>
 <td></td>
 </tr>
 <tr>
-<td> 11</td>
-<td>9</td>
+<td> 9</td>
 <td>spring-cloud-Config</td>
 <td>统一管理微服务配置</td>
 <td></td>
 </tr>
 <tr>
-<td> 12</td>
-<td>10</td>
+<td> 10</td>
 <td>spring-cloud-sleuth</td>
 <td>微服务跟踪</td>
 <td>分布式跟踪的解决方案</td>
 </tr>
 <tr>
-<td> 13</td>
 <td></td>
 <td>ELK</td>
 <td>日志分析系统</td>
 <td></td>
 </tr>
 <tr>
-<td> 14</td>
 <td></td>
 <td>Zipkin</td>
 <td>Twitter开源的分布式跟踪系统</td>
 <td>可与Sleuth配合使用<br>收集系统的时序数据<br>追踪微服务框架的系统延时等问题<br>提供友好的界面，帮助分析追踪数据。</td>
 </tr>
 <tr>
-<td> 15</td>
-<td>12</td>
+<td> 12</td>
 <td>Docker</td>
 <td>开源容器引擎<br>有助于更快地交付应用</td>
 <td>可将应用程序和基础设施层隔离<br>能将基础设置当做程序一样进行管理<br>可更快地打包、测试以及部署应用程序<br>缩短从编写到部署运行代码的周期</td>
 </tr>
 <tr>
-<td> 16</td>
-<td>14</td>
+<td> 14</td>
 <td>Docker Compose</td>
 <td>编排微服务</td>
 <td>用于定义和运行多容器Docker应用程序的工具<br>前身是Fig<br>非常适合用在开发、测试、构建CI工作流等场景</td>

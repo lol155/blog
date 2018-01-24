@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.signalfire2017.com/"/>
-  <updated>2018-01-24T07:14:47.126Z</updated>
+  <updated>2018-01-24T07:16:43.499Z</updated>
   <id>https://blog.signalfire2017.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://blog.signalfire2017.com/2018/01/24/%E6%9D%82%E8%AE%B0/linux%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4/"/>
     <id>https://blog.signalfire2017.com/2018/01/24/杂记/linux修改时间/</id>
     <published>2018-01-24T07:03:02.000Z</published>
-    <updated>2018-01-24T07:14:47.126Z</updated>
+    <updated>2018-01-24T07:16:43.499Z</updated>
     
     <content type="html"><![CDATA[<p>linux修改时间</p>
 <ul>
@@ -56,7 +56,7 @@
     
     </summary>
     
-      <category term="简单记录" scheme="https://blog.signalfire2017.com/categories/%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/"/>
+      <category term="学习" scheme="https://blog.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
       <category term="linux" scheme="https://blog.signalfire2017.com/tags/linux/"/>
@@ -68,7 +68,7 @@
     <link href="https://blog.signalfire2017.com/2018/01/24/%E6%9D%82%E8%AE%B0/tomcat+idea%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95/"/>
     <id>https://blog.signalfire2017.com/2018/01/24/杂记/tomcat+idea远程调试/</id>
     <published>2018-01-24T07:03:02.000Z</published>
-    <updated>2018-01-24T07:14:48.102Z</updated>
+    <updated>2018-01-24T07:16:48.889Z</updated>
     
     <content type="html"><![CDATA[<h1 id="测试的web项目"><a href="#测试的web项目" class="headerlink" title="测试的web项目"></a>测试的web项目</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.signalfire.servlet;</div><div class="line"><span class="keyword">import</span> javax.servlet.ServletException;</div><div class="line"><span class="keyword">import</span> javax.servlet.ServletRequest;</div><div class="line"><span class="keyword">import</span> javax.servlet.ServletResponse;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * Created by jk on 2017/12/12.</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</div><div class="line">        System.out.println(<span class="string">"111111111111111111"</span>);</div><div class="line">        resp.getWriter().write(<span class="string">"hello baby"</span>);</div><div class="line">        resp.getWriter().flush();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE web-app PUBLIC</span></div><div class="line"><span class="meta"> "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"</span></div><div class="line"><span class="meta"> "http://java.sun.com/dtd/web-app_2_3.dtd" &gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">web-app</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">display-name</span>&gt;</span>Archetype Created Web Application<span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>my<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.signalfire.servlet.HelloServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>my<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -96,7 +96,7 @@
     
     </summary>
     
-      <category term="简单记录" scheme="https://blog.signalfire2017.com/categories/%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/"/>
+      <category term="学习" scheme="https://blog.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
       <category term="idea" scheme="https://blog.signalfire2017.com/tags/idea/"/>
@@ -108,7 +108,7 @@
     <link href="https://blog.signalfire2017.com/2018/01/24/%E6%9D%82%E8%AE%B0/linux%E4%B8%8B%E5%AE%89%E8%A3%85opencv-java/"/>
     <id>https://blog.signalfire2017.com/2018/01/24/杂记/linux下安装opencv-java/</id>
     <published>2018-01-24T07:03:02.000Z</published>
-    <updated>2018-01-24T07:14:46.259Z</updated>
+    <updated>2018-01-24T07:16:39.236Z</updated>
     
     <content type="html"><![CDATA[<p>linux下安装opencv java </p>
 <h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>在正式环境安装的时候安装opencv时候一直编译失败，缺少文件，后来下载了310版本的opencv，可以用了<br>线上环境linux centos6.5</p>
@@ -144,7 +144,7 @@
     
     </summary>
     
-      <category term="简单记录" scheme="https://blog.signalfire2017.com/categories/%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/"/>
+      <category term="学习" scheme="https://blog.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
       <category term="opencv" scheme="https://blog.signalfire2017.com/tags/opencv/"/>
@@ -156,7 +156,7 @@
     <link href="https://blog.signalfire2017.com/2018/01/24/%E6%9D%82%E8%AE%B0/js%E5%BF%83%E8%B7%B3%E8%AF%B7%E6%B1%82/"/>
     <id>https://blog.signalfire2017.com/2018/01/24/杂记/js心跳请求/</id>
     <published>2018-01-24T07:03:02.000Z</published>
-    <updated>2018-01-24T07:14:43.961Z</updated>
+    <updated>2018-01-24T07:16:40.764Z</updated>
     
     <content type="html"><![CDATA[<p>示例代码,mark一下<br>var timer = setInterval (function(){},time)<br>clearInterval(timer)<br><a id="more"></a></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> timer;</div><div class="line">timer = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    Common.ajax.execute(&#123;</div><div class="line">        <span class="string">'url'</span>: Common.url.getBaseURL() + <span class="string">'/flow/get-trusteeship.do'</span>,</div><div class="line">        <span class="string">'data'</span>: &#123;</div><div class="line">            <span class="string">"programId"</span>: $(<span class="string">"#programId"</span>).val(),</div><div class="line">        &#125;,</div><div class="line">        <span class="string">'success'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span> (data.result == <span class="string">'success'</span> &amp;&amp; data.trusteeship) &#123;</div><div class="line">                <span class="keyword">if</span>(data.trusteeship.status == <span class="number">3</span>)&#123;</div><div class="line">                    clearInterval(timer);</div><div class="line">                    EmayPagination.action.skipToCurrentPage($(<span class="string">'#trusteeshipListQueryPaginationContainer'</span>),</div><div class="line">                        $(<span class="string">'#trusteeshipListQueryPaginationContainer .pagination-node.active'</span>).attr(<span class="string">'data-current-page-number'</span>));</div><div class="line">                    Trusteeship.dom.setStep(<span class="number">3</span>);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        <span class="string">'error'</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            Messager.action.error(<span class="string">'操作异常。'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">&#125;,<span class="number">5000</span>);</div></pre></td></tr></table></figure>]]></content>
@@ -167,7 +167,7 @@
     
     </summary>
     
-      <category term="简单记录" scheme="https://blog.signalfire2017.com/categories/%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/"/>
+      <category term="学习" scheme="https://blog.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
       <category term="javascript" scheme="https://blog.signalfire2017.com/tags/javascript/"/>

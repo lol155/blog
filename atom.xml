@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.signalfire2017.com/"/>
-  <updated>2018-01-25T03:16:26.331Z</updated>
+  <updated>2018-01-24T07:16:48.889Z</updated>
   <id>https://blog.signalfire2017.com/</id>
   
   <author>
@@ -14,32 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>linux 程序down 问题排查</title>
-    <link href="https://blog.signalfire2017.com/2018/01/24/%E6%9D%82%E8%AE%B0/linux%20%E7%A8%8B%E5%BA%8Fdown%20%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/"/>
-    <id>https://blog.signalfire2017.com/2018/01/24/杂记/linux 程序down 问题排查/</id>
-    <published>2018-01-24T07:03:02.000Z</published>
-    <updated>2018-01-25T03:16:26.331Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="linux系统有自我保护机制"><a href="#linux系统有自我保护机制" class="headerlink" title="linux系统有自我保护机制"></a>linux系统有自我保护机制</h1><p>如果分配的内存用完了,会杀掉进程.<br>可以查看日志<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/var/log/messages</div></pre></td></tr></table></figure></p>
-<p>然后通过进程ID 进行查询  ,或者 <code>oom-killer</code> 来查询<br><img src="http://ovasdkxqr.bkt.clouddn.com/image/work/linux%20程序down%20问题排查-20171226102834.png" alt="linux 程序down 问题排查-20171226102834"></p>
-<h2 id="内存不够"><a href="#内存不够" class="headerlink" title="内存不够"></a>内存不够</h2><p>可以配置虚拟内存,解决内存高峰时内存不够的问题.</p>
-<h1 id="线程挂掉用jstack分析线程栈"><a href="#线程挂掉用jstack分析线程栈" class="headerlink" title="线程挂掉用jstack分析线程栈"></a>线程挂掉用jstack分析线程栈</h1><p>可以使用 jstack 查看进程信息</p>
-<h1 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h1><h2 id="lsof-n-学习"><a href="#lsof-n-学习" class="headerlink" title="lsof -n (学习)"></a>lsof -n (学习)</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;linux系统有自我保护机制&quot;&gt;&lt;a href=&quot;#linux系统有自我保护机制&quot; class=&quot;headerlink&quot; title=&quot;linux系统有自我保护机制&quot;&gt;&lt;/a&gt;linux系统有自我保护机制&lt;/h1&gt;&lt;p&gt;如果分配的内存用完了,会杀掉进程.&lt;br&gt;可
-    
-    </summary>
-    
-      <category term="学习" scheme="https://blog.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="linux" scheme="https://blog.signalfire2017.com/tags/linux/"/>
-    
-  </entry>
   
   <entry>
     <title>tomcat+idea远程调试</title>
@@ -78,6 +52,54 @@
     
     
       <category term="idea" scheme="https://blog.signalfire2017.com/tags/idea/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux修改时间</title>
+    <link href="https://blog.signalfire2017.com/2018/01/24/%E6%9D%82%E8%AE%B0/linux%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4/"/>
+    <id>https://blog.signalfire2017.com/2018/01/24/杂记/linux修改时间/</id>
+    <published>2018-01-24T07:03:02.000Z</published>
+    <updated>2018-01-24T07:16:43.499Z</updated>
+    
+    <content type="html"><![CDATA[<p>linux修改时间</p>
+<ul>
+<li><p>修改时区</p>
+<blockquote>
+<p>cp /usr/share/zoneinfo/UTC /etc/localtime </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# cp /usr/share/zoneinfo/UTC /etc/localtime </div><div class="line">cp：是否覆盖“/etc/localtime”? y </div><div class="line">[root@localhost ~]# date </div><div class="line">2012年 11月 02日 星期五 00:07:30 UTC</div><div class="line">修改为中国的东八区</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>配置新的时间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># vi /etc/sysconfig/clock</div><div class="line">ZONE=&quot;Asia/Shanghai&quot;</div><div class="line">UTC=false</div><div class="line">ARC=false</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>安装ntp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install -y ntp</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置时间同步</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ntpdate 210.72.145.44</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>参考链接 <a href="http://www.linuxidc.com/Linux/2017-03/141745.htm" target="_blank" rel="external">Linux服务器同步网络时间</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;linux修改时间&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;修改时区&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;cp /usr/share/zoneinfo/UTC /etc/localtime &lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="https://blog.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="linux" scheme="https://blog.signalfire2017.com/tags/linux/"/>
     
   </entry>
   
@@ -130,6 +152,32 @@
   </entry>
   
   <entry>
+    <title>linux 程序down 问题排查</title>
+    <link href="https://blog.signalfire2017.com/2018/01/24/%E6%9D%82%E8%AE%B0/linux%20%E7%A8%8B%E5%BA%8Fdown%20%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/"/>
+    <id>https://blog.signalfire2017.com/2018/01/24/杂记/linux 程序down 问题排查/</id>
+    <published>2018-01-24T07:03:02.000Z</published>
+    <updated>2018-01-25T03:48:58.172Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="linux系统有自我保护机制"><a href="#linux系统有自我保护机制" class="headerlink" title="linux系统有自我保护机制"></a>linux系统有自我保护机制</h1><p>如果分配的内存用完了,会杀掉进程.<br>可以查看日志<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/var/log/messages</div></pre></td></tr></table></figure></p>
+<p>然后通过进程ID 进行查询  ,或者 <code>oom-killer</code> 来查询<br><img src="http://ovasdkxqr.bkt.clouddn.com/image/work/linux%20程序down%20问题排查-20171226102834.png" alt="linux 程序down 问题排查-20171226102834"></p>
+<h2 id="内存不够"><a href="#内存不够" class="headerlink" title="内存不够"></a>内存不够</h2><p>可以配置虚拟内存,解决内存高峰时内存不够的问题.</p>
+<h1 id="线程挂掉用jstack分析线程栈"><a href="#线程挂掉用jstack分析线程栈" class="headerlink" title="线程挂掉用jstack分析线程栈"></a>线程挂掉用jstack分析线程栈</h1><p>可以使用 jstack 查看进程信息</p>
+<h1 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h1><h2 id="lsof-n-学习"><a href="#lsof-n-学习" class="headerlink" title="lsof -n (学习)"></a>lsof -n (学习)</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;linux系统有自我保护机制&quot;&gt;&lt;a href=&quot;#linux系统有自我保护机制&quot; class=&quot;headerlink&quot; title=&quot;linux系统有自我保护机制&quot;&gt;&lt;/a&gt;linux系统有自我保护机制&lt;/h1&gt;&lt;p&gt;如果分配的内存用完了,会杀掉进程.&lt;br&gt;可
+    
+    </summary>
+    
+      <category term="学习" scheme="https://blog.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="linux" scheme="https://blog.signalfire2017.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>js心跳请求</title>
     <link href="https://blog.signalfire2017.com/2018/01/24/%E6%9D%82%E8%AE%B0/js%E5%BF%83%E8%B7%B3%E8%AF%B7%E6%B1%82/"/>
     <id>https://blog.signalfire2017.com/2018/01/24/杂记/js心跳请求/</id>
@@ -149,54 +197,6 @@
     
     
       <category term="javascript" scheme="https://blog.signalfire2017.com/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux修改时间</title>
-    <link href="https://blog.signalfire2017.com/2018/01/24/%E6%9D%82%E8%AE%B0/linux%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4/"/>
-    <id>https://blog.signalfire2017.com/2018/01/24/杂记/linux修改时间/</id>
-    <published>2018-01-24T07:03:02.000Z</published>
-    <updated>2018-01-24T07:16:43.499Z</updated>
-    
-    <content type="html"><![CDATA[<p>linux修改时间</p>
-<ul>
-<li><p>修改时区</p>
-<blockquote>
-<p>cp /usr/share/zoneinfo/UTC /etc/localtime </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# cp /usr/share/zoneinfo/UTC /etc/localtime </div><div class="line">cp：是否覆盖“/etc/localtime”? y </div><div class="line">[root@localhost ~]# date </div><div class="line">2012年 11月 02日 星期五 00:07:30 UTC</div><div class="line">修改为中国的东八区</div></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li><p>配置新的时间</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># vi /etc/sysconfig/clock</div><div class="line">ZONE=&quot;Asia/Shanghai&quot;</div><div class="line">UTC=false</div><div class="line">ARC=false</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>安装ntp</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install -y ntp</div></pre></td></tr></table></figure>
-</li>
-<li><p>设置时间同步</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ntpdate 210.72.145.44</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>参考链接 <a href="http://www.linuxidc.com/Linux/2017-03/141745.htm" target="_blank" rel="external">Linux服务器同步网络时间</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;linux修改时间&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;修改时区&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;cp /usr/share/zoneinfo/UTC /etc/localtime &lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;
-    
-    </summary>
-    
-      <category term="学习" scheme="https://blog.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="linux" scheme="https://blog.signalfire2017.com/tags/linux/"/>
     
   </entry>
   

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[linux修改时间]]></title>
-    <url>%2F2018%2F01%2F24%2F%E6%9D%82%E8%AE%B0%2Flinux%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4%2F</url>
-    <content type="text"><![CDATA[linux修改时间 修改时区 cp /usr/share/zoneinfo/UTC /etc/localtime 12345[root@localhost ~]# cp /usr/share/zoneinfo/UTC /etc/localtime cp：是否覆盖“/etc/localtime”? y [root@localhost ~]# date 2012年 11月 02日 星期五 00:07:30 UTC修改为中国的东八区 配置新的时间 1234# vi /etc/sysconfig/clockZONE=&quot;Asia/Shanghai&quot;UTC=falseARC=false 安装ntp 1yum install -y ntp 设置时间同步 1ntpdate 210.72.145.44 参考链接 Linux服务器同步网络时间]]></content>
+    <title><![CDATA[linux 程序down 问题排查]]></title>
+    <url>%2F2018%2F01%2F24%2F%E6%9D%82%E8%AE%B0%2Flinux%20%E7%A8%8B%E5%BA%8Fdown%20%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%2F</url>
+    <content type="text"><![CDATA[linux系统有自我保护机制如果分配的内存用完了,会杀掉进程.可以查看日志1/var/log/messages 然后通过进程ID 进行查询 ,或者 oom-killer 来查询 内存不够可以配置虚拟内存,解决内存高峰时内存不够的问题. 线程挂掉用jstack分析线程栈可以使用 jstack 查看进程信息 其他命令lsof -n (学习)]]></content>
       <categories>
         <category>学习</category>
       </categories>
@@ -42,6 +42,17 @@
       </categories>
       <tags>
         <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[linux修改时间]]></title>
+    <url>%2F2018%2F01%2F24%2F%E6%9D%82%E8%AE%B0%2Flinux%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4%2F</url>
+    <content type="text"><![CDATA[linux修改时间 修改时区 cp /usr/share/zoneinfo/UTC /etc/localtime 12345[root@localhost ~]# cp /usr/share/zoneinfo/UTC /etc/localtime cp：是否覆盖“/etc/localtime”? y [root@localhost ~]# date 2012年 11月 02日 星期五 00:07:30 UTC修改为中国的东八区 配置新的时间 1234# vi /etc/sysconfig/clockZONE=&quot;Asia/Shanghai&quot;UTC=falseARC=false 安装ntp 1yum install -y ntp 设置时间同步 1ntpdate 210.72.145.44 参考链接 Linux服务器同步网络时间]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>

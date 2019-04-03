@@ -5,10 +5,10 @@
     <url>%2F2019%2F04%2F03%2F%E6%9D%82%E8%AE%B0%2Fidea%2Fidea-setter-getter-%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[设置 getter12345678#if($field.modifierStatic)static ###end$field.type ###set($name = $StringUtil.capitalizeWithJavaBeanConvention($StringUtil.sanitizeJavaIdentifier($helper.getPropertyName($field, $project))))get$&#123;name&#125;() &#123; return $field.name;&#125; setter1234567891011121314151617181920#set($paramName = $helper.getParamName($field, $project))public ###if($field.modifierStatic)static void ###else $classSignature ###endset$StringUtil.capitalizeWithJavaBeanConvention($StringUtil.sanitizeJavaIdentifier($helper.getPropertyName($field, $project)))($field.type $paramName) &#123;#if ($field.name == $paramName) #if (!$field.modifierStatic) this.## #else $classname.## #end#end$field.name = $paramName;#if(!$field.modifierStatic)return this;#end&#125;]]></content>
       <categories>
-        <category>学习</category>
+        <category>idea</category>
       </categories>
       <tags>
-        <tag>大数据</tag>
+        <tag>idea</tag>
       </tags>
   </entry>
   <entry>

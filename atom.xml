@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.signalfire2017.com/"/>
-  <updated>2019-09-12T08:30:46.628Z</updated>
+  <updated>2019-09-12T08:33:46.431Z</updated>
   <id>https://blog.signalfire2017.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://blog.signalfire2017.com/2019/09/12/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95-easyMock/"/>
     <id>https://blog.signalfire2017.com/2019/09/12/单元测试-easyMock/</id>
     <published>2019-09-12T08:26:04.000Z</published>
-    <updated>2019-09-12T08:30:46.628Z</updated>
+    <updated>2019-09-12T08:33:46.431Z</updated>
     
     <content type="html"><![CDATA[<p>easyMock简单使用<br><a id="more"></a></p>
 <h2 id="1-引入pom-xml依赖"><a href="#1-引入pom-xml依赖" class="headerlink" title="1. 引入pom.xml依赖"></a>1. 引入pom.xml依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.easymock/easymock --&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.easymock<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>easymock<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.powermock<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>powermock-api-easymock<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.powermock<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>powermock-module-junit4<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">      <span class="comment">&lt;!-- https://mvnrepository.com/artifact/cglib/cglib-nodep --&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>cglib<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>cglib-nodep<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -37,7 +37,11 @@
       <category term="学习" scheme="https://blog.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="大数据" scheme="https://blog.signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+      <category term="java" scheme="https://blog.signalfire2017.com/tags/java/"/>
+    
+      <category term="mock" scheme="https://blog.signalfire2017.com/tags/mock/"/>
+    
+      <category term="easyMock" scheme="https://blog.signalfire2017.com/tags/easyMock/"/>
     
   </entry>
   

@@ -803,7 +803,7 @@
   <entry>
     <title><![CDATA[记录下hexo常用命令自己方便看]]></title>
     <url>%2F2017%2F09%2F03%2F%E6%9D%82%E8%AE%B0%2F%E8%AE%B0%E5%BD%95%E4%B8%8Bhexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%87%AA%E5%B7%B1%E6%96%B9%E4%BE%BF%E7%9C%8B%2F</url>
-    <content type="text"><![CDATA[1234567Hexo常用命令： hexo new &quot;postName&quot; #新建文章 hexo new page &quot;pageName&quot; #新建页面 hexo generate #生成静态页面至public目录 hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server） hexo deploy #将.deploy目录部署到GitHub 简写 1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 复合命令 hexo deploy -g hexo server -g 有时候生成的网页出错了，而生成的rss其实没有清除，那么用下面的命令，在重新生成吧 hexo clean]]></content>
+    <content type="text"><![CDATA[12345678Hexo常用命令： hexo new &quot;postName&quot; #新建文章 hexo new page &quot;pageName&quot; #新建页面 hexo generate #生成静态页面至public目录 hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server） hexo deploy #将.deploy目录部署到GitHub hexo publish #将草稿发布 _draft里面的内容 简写 1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 复合命令 hexo deploy -g hexo server -g 有时候生成的网页出错了，而生成的rss其实没有清除，那么用下面的命令，在重新生成吧 hexo clean]]></content>
       <categories>
         <category>工具</category>
       </categories>

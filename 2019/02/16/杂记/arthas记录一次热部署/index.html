@@ -97,21 +97,21 @@
 
 
 
-<meta name="description" content="1. 安装启动arthas去arthas官网下载一份压缩包 传到服务器上解压 /data/crm/arthas-arthas-all-3.2.0/bin/as.sh 或者直接下载个jar包 java -jar arthas-boot.jar 2. 查看目标类的加载器(以WorkspaceAction.java为例)sc -d *WorkspaceAction | grep classLoaderH">
+<meta name="description" content="1. 安装启动arthas去arthas官网下载一份压缩包 传到服务器上解压 1/data/crm/arthas-arthas-all-3.2.0/bin/as.sh 或者直接下载个jar包 1java -jar arthas-boot.jar 2. 查看目标类的加载器(以WorkspaceAction.java为例)1sc -d *WorkspaceAction | grep classLoad">
 <meta name="keywords" content="arthas">
 <meta property="og:type" content="article">
 <meta property="og:title" content="arthas记一次热部署使用">
 <meta property="og:url" content="https://blog.signalfire2017.com/2019/02/16/杂记/arthas记录一次热部署/index.html">
 <meta property="og:site_name" content="名字待定">
-<meta property="og:description" content="1. 安装启动arthas去arthas官网下载一份压缩包 传到服务器上解压 /data/crm/arthas-arthas-all-3.2.0/bin/as.sh 或者直接下载个jar包 java -jar arthas-boot.jar 2. 查看目标类的加载器(以WorkspaceAction.java为例)sc -d *WorkspaceAction | grep classLoaderH">
+<meta property="og:description" content="1. 安装启动arthas去arthas官网下载一份压缩包 传到服务器上解压 1/data/crm/arthas-arthas-all-3.2.0/bin/as.sh 或者直接下载个jar包 1java -jar arthas-boot.jar 2. 查看目标类的加载器(以WorkspaceAction.java为例)1sc -d *WorkspaceAction | grep classLoad">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://blog.signalfire2017.com/2019/02/16/杂记/arthas记录一次热部署/image/arthas记录一次热部署/image-2020-05-06-11-27-35.png">
 <meta property="og:image" content="https://blog.signalfire2017.com/2019/02/16/杂记/arthas记录一次热部署/image/arthas记录一次热部署/image-2020-05-06-11-30-51.png">
 <meta property="og:image" content="https://blog.signalfire2017.com/2019/02/16/杂记/arthas记录一次热部署/image/arthas记录一次热部署/image-2020-05-06-11-31-25.png">
-<meta property="og:updated_time" content="2020-05-06T03:32:12.319Z">
+<meta property="og:updated_time" content="2020-05-06T03:40:31.829Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="arthas记一次热部署使用">
-<meta name="twitter:description" content="1. 安装启动arthas去arthas官网下载一份压缩包 传到服务器上解压 /data/crm/arthas-arthas-all-3.2.0/bin/as.sh 或者直接下载个jar包 java -jar arthas-boot.jar 2. 查看目标类的加载器(以WorkspaceAction.java为例)sc -d *WorkspaceAction | grep classLoaderH">
+<meta name="twitter:description" content="1. 安装启动arthas去arthas官网下载一份压缩包 传到服务器上解压 1/data/crm/arthas-arthas-all-3.2.0/bin/as.sh 或者直接下载个jar包 1java -jar arthas-boot.jar 2. 查看目标类的加载器(以WorkspaceAction.java为例)1sc -d *WorkspaceAction | grep classLoad">
 <meta name="twitter:image" content="https://blog.signalfire2017.com/2019/02/16/杂记/arthas记录一次热部署/image/arthas记录一次热部署/image-2020-05-06-11-27-35.png">
 
 
@@ -410,14 +410,16 @@
       
         <h1 id="1-安装启动arthas"><a href="#1-安装启动arthas" class="headerlink" title="1. 安装启动arthas"></a>1. 安装启动arthas</h1><p>去arthas官网下载一份压缩包</p>
 <p>传到服务器上解压</p>
-<p>/data/crm/arthas-arthas-all-3.2.0/bin/as.sh</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/data/crm/arthas-arthas-all-3.2.0/bin/as.sh</div></pre></td></tr></table></figure>
 <p>或者直接下载个jar包</p>
-<p>java -jar arthas-boot.jar</p>
-<h1 id="2-查看目标类的加载器-以WorkspaceAction-java为例"><a href="#2-查看目标类的加载器-以WorkspaceAction-java为例" class="headerlink" title="2. 查看目标类的加载器(以WorkspaceAction.java为例)"></a>2. 查看目标类的加载器(以WorkspaceAction.java为例)</h1><p>sc -d *WorkspaceAction | grep classLoaderHash<br><img src="image/arthas记录一次热部署/image-2020-05-06-11-27-35.png" alt="image-2020-05-06-11-27-35.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar arthas-boot.jar</div></pre></td></tr></table></figure>
+<h1 id="2-查看目标类的加载器-以WorkspaceAction-java为例"><a href="#2-查看目标类的加载器-以WorkspaceAction-java为例" class="headerlink" title="2. 查看目标类的加载器(以WorkspaceAction.java为例)"></a>2. 查看目标类的加载器(以WorkspaceAction.java为例)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sc -d *WorkspaceAction | grep classLoaderHash</div></pre></td></tr></table></figure>
+<p><img src="image/arthas记录一次热部署/image-2020-05-06-11-27-35.png" alt="image-2020-05-06-11-27-35.png"></p>
 <p>记录编译器对象地址 152f2143</p>
-<h1 id="3-反编译"><a href="#3-反编译" class="headerlink" title="3. 反编译"></a>3. 反编译</h1><p>(编译,修改后的文件加载时候有问题,后来在本地修改java文件,传上去加载的)<br>jad –source-only  com.taobao.rigel.rap.workspace.web.action.WorkspaceAction &gt; /tmp/WorkspaceAction.java</p>
-<h1 id="4-将修改后的java文件编译"><a href="#4-将修改后的java文件编译" class="headerlink" title="4. 将修改后的java文件编译"></a>4. 将修改后的java文件编译</h1><p>mc -c 152f2143 WorkspaceAction.java<br>指定类加载,默认的执行路径是对应的程序的执行路径<br><img src="image/arthas记录一次热部署/image-2020-05-06-11-30-51.png" alt="image-2020-05-06-11-30-51.png"></p>
-<h1 id="5-加载class文件"><a href="#5-加载class文件" class="headerlink" title="5. 加载class文件"></a>5. 加载class文件</h1><p>redefine /data/crm/tomcat-jdk8-rap/bin/com/taobao/rigel/rap/workspace/web/action/WorkspaceAction.class</p>
+<h1 id="3-反编译"><a href="#3-反编译" class="headerlink" title="3. 反编译"></a>3. 反编译</h1><p>(编译,修改后的文件加载时候有问题,后来在本地修改java文件,传上去加载的)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jad --source-only  com.taobao.rigel.rap.workspace.web.action.WorkspaceAction &gt; /tmp/WorkspaceAction.java</div></pre></td></tr></table></figure></p>
+<h1 id="4-将修改后的java文件编译"><a href="#4-将修改后的java文件编译" class="headerlink" title="4. 将修改后的java文件编译"></a>4. 将修改后的java文件编译</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mc -c 152f2143 WorkspaceAction.java</div></pre></td></tr></table></figure>
+<p>指定类加载,默认的执行路径是对应的程序的执行路径<br><img src="image/arthas记录一次热部署/image-2020-05-06-11-30-51.png" alt="image-2020-05-06-11-30-51.png"></p>
+<h1 id="5-加载class文件"><a href="#5-加载class文件" class="headerlink" title="5. 加载class文件"></a>5. 加载class文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redefine /data/crm/tomcat-jdk8-rap/bin/com/taobao/rigel/rap/workspace/web/action/WorkspaceAction.class</div></pre></td></tr></table></figure>
 <p><img src="image/arthas记录一次热部署/image-2020-05-06-11-31-25.png" alt="image-2020-05-06-11-31-25.png"></p>
 
       
@@ -545,7 +547,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-count">76</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

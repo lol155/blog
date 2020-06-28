@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.signalfire2017.com/"/>
-  <updated>2019-09-16T01:26:40.665Z</updated>
+  <updated>2020-06-28T06:58:32.253Z</updated>
   <id>https://blog.signalfire2017.com/</id>
   
   <author>
@@ -14,6 +14,372 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>将博客搬至CSDN</title>
+    <link href="https://blog.signalfire2017.com/2020/06/28/%E5%B0%86%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%87%B3CSDN/"/>
+    <id>https://blog.signalfire2017.com/2020/06/28/将博客搬至CSDN/</id>
+    <published>2020-06-28T06:58:32.000Z</published>
+    <updated>2020-06-28T06:58:32.253Z</updated>
+    
+    <content type="html"><![CDATA[<p>将博客搬至CSDN</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;将博客搬至CSDN&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="学习" scheme="https://blog.signalfire2017.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="大数据" scheme="https://blog.signalfire2017.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://blog.signalfire2017.com/2020/05/06/%E6%9D%82%E8%AE%B0/arthas%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E7%83%AD%E9%83%A8%E7%BD%B2/"/>
+    <id>https://blog.signalfire2017.com/2020/05/06/杂记/arthas记录一次热部署/</id>
+    <published>2020-05-06T03:40:09.845Z</published>
+    <updated>2020-05-06T03:40:36.410Z</updated>
+    
+    <content type="html"><![CDATA[<!DOCTYPE html><html><head>
+      <title>arthas&#x8BB0;&#x4E00;&#x6B21;&#x70ED;&#x90E8;&#x7F72;&#x4F7F;&#x7528;</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\jk\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.3\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+.markdown-preview.markdown-preview {
+  background-color: #fafafa;
+}
+.markdown-preview.markdown-preview strong {
+  color: red;
+  font-size: 22px;
+  background-color: transparent;
+  font-weight: normal;
+}
+.markdown-preview.markdown-preview pre {
+  background-color: #dce2f1;
+}
+.markdown-preview.markdown-preview code {
+  color: red;
+  background-color: transparent;
+}
+.markdown-preview.markdown-preview pre > code {
+  color: black;
+}
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="1-%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8arthas">1. &#x5B89;&#x88C5;&#x542F;&#x52A8;arthas</h1>
+
+<p>&#x53BB;arthas&#x5B98;&#x7F51;&#x4E0B;&#x8F7D;&#x4E00;&#x4EFD;&#x538B;&#x7F29;&#x5305;</p>
+<p>&#x4F20;&#x5230;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x89E3;&#x538B;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>/data/crm/arthas-arthas-all-3.2.0/bin/as.sh
+</code></pre><p>&#x6216;&#x8005;&#x76F4;&#x63A5;&#x4E0B;&#x8F7D;&#x4E2A;jar&#x5305;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>java -jar arthas-boot.jar
+</code></pre><h1 class="mume-header" id="2-%E6%9F%A5%E7%9C%8B%E7%9B%AE%E6%A0%87%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%99%A8%E4%BB%A5workspaceactionjava%E4%B8%BA%E4%BE%8B">2. &#x67E5;&#x770B;&#x76EE;&#x6807;&#x7C7B;&#x7684;&#x52A0;&#x8F7D;&#x5668;(&#x4EE5;WorkspaceAction.java&#x4E3A;&#x4F8B;)</h1>
+
+<pre data-role="codeBlock" data-info="" class="language-"><code>sc -d *WorkspaceAction | grep classLoaderHash 
+</code></pre><p><img src="image/arthas%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E7%83%AD%E9%83%A8%E7%BD%B2/image-2020-05-06-11-27-35.png" alt="image-2020-05-06-11-27-35.png"></p>
+<p>&#x8BB0;&#x5F55;&#x7F16;&#x8BD1;&#x5668;&#x5BF9;&#x8C61;&#x5730;&#x5740; 152f2143</p>
+<h1 class="mume-header" id="3-%E5%8F%8D%E7%BC%96%E8%AF%91">3. &#x53CD;&#x7F16;&#x8BD1;</h1>
+
+<p>(&#x7F16;&#x8BD1;,&#x4FEE;&#x6539;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x52A0;&#x8F7D;&#x65F6;&#x5019;&#x6709;&#x95EE;&#x9898;,&#x540E;&#x6765;&#x5728;&#x672C;&#x5730;&#x4FEE;&#x6539;java&#x6587;&#x4EF6;,&#x4F20;&#x4E0A;&#x53BB;&#x52A0;&#x8F7D;&#x7684;)</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>jad --source-only  com.taobao.rigel.rap.workspace.web.action.WorkspaceAction &gt; /tmp/WorkspaceAction.java
+</code></pre><h1 class="mume-header" id="4-%E5%B0%86%E4%BF%AE%E6%94%B9%E5%90%8E%E7%9A%84java%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91">4. &#x5C06;&#x4FEE;&#x6539;&#x540E;&#x7684;java&#x6587;&#x4EF6;&#x7F16;&#x8BD1;</h1>
+
+<pre data-role="codeBlock" data-info="" class="language-"><code>mc -c 152f2143 WorkspaceAction.java
+</code></pre><p>&#x6307;&#x5B9A;&#x7C7B;&#x52A0;&#x8F7D;,&#x9ED8;&#x8BA4;&#x7684;&#x6267;&#x884C;&#x8DEF;&#x5F84;&#x662F;&#x5BF9;&#x5E94;&#x7684;&#x7A0B;&#x5E8F;&#x7684;&#x6267;&#x884C;&#x8DEF;&#x5F84;<br>
+<img src="image/arthas%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E7%83%AD%E9%83%A8%E7%BD%B2/image-2020-05-06-11-30-51.png" alt="image-2020-05-06-11-30-51.png"></p>
+<h1 class="mume-header" id="5-%E5%8A%A0%E8%BD%BDclass%E6%96%87%E4%BB%B6">5. &#x52A0;&#x8F7D;class&#x6587;&#x4EF6;</h1>
+
+<pre data-role="codeBlock" data-info="" class="language-"><code>redefine /data/crm/tomcat-jdk8-rap/bin/com/taobao/rigel/rap/workspace/web/action/WorkspaceAction.class
+</code></pre><p><img src="image/arthas%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E7%83%AD%E9%83%A8%E7%BD%B2/image-2020-05-06-11-31-25.png" alt="image-2020-05-06-11-31-25.png"></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>]]></content>
+    
+    <summary type="html">
+    
+      &lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;
+      &lt;title&gt;arthas&amp;#x8BB0;&amp;#x4E00;&amp;#x6B21;&amp;#x70ED;&amp;#x90E8;&amp;#x7F72;&amp;#x4F7F;&amp;#x7528;&lt;/title&gt;
+      &lt;meta charset=
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>flutter开发环境安装</title>
@@ -190,18 +556,20 @@
     <link href="https://blog.signalfire2017.com/2019/02/16/%E6%9D%82%E8%AE%B0/arthas%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E7%83%AD%E9%83%A8%E7%BD%B2/"/>
     <id>https://blog.signalfire2017.com/2019/02/16/杂记/arthas记录一次热部署/</id>
     <published>2019-02-16T04:10:00.000Z</published>
-    <updated>2020-05-06T03:32:12.319Z</updated>
+    <updated>2020-05-06T03:40:31.829Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-安装启动arthas"><a href="#1-安装启动arthas" class="headerlink" title="1. 安装启动arthas"></a>1. 安装启动arthas</h1><p>去arthas官网下载一份压缩包</p>
 <p>传到服务器上解压</p>
-<p>/data/crm/arthas-arthas-all-3.2.0/bin/as.sh</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/data/crm/arthas-arthas-all-3.2.0/bin/as.sh</div></pre></td></tr></table></figure>
 <p>或者直接下载个jar包</p>
-<p>java -jar arthas-boot.jar</p>
-<h1 id="2-查看目标类的加载器-以WorkspaceAction-java为例"><a href="#2-查看目标类的加载器-以WorkspaceAction-java为例" class="headerlink" title="2. 查看目标类的加载器(以WorkspaceAction.java为例)"></a>2. 查看目标类的加载器(以WorkspaceAction.java为例)</h1><p>sc -d *WorkspaceAction | grep classLoaderHash<br><img src="image/arthas记录一次热部署/image-2020-05-06-11-27-35.png" alt="image-2020-05-06-11-27-35.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar arthas-boot.jar</div></pre></td></tr></table></figure>
+<h1 id="2-查看目标类的加载器-以WorkspaceAction-java为例"><a href="#2-查看目标类的加载器-以WorkspaceAction-java为例" class="headerlink" title="2. 查看目标类的加载器(以WorkspaceAction.java为例)"></a>2. 查看目标类的加载器(以WorkspaceAction.java为例)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sc -d *WorkspaceAction | grep classLoaderHash</div></pre></td></tr></table></figure>
+<p><img src="image/arthas记录一次热部署/image-2020-05-06-11-27-35.png" alt="image-2020-05-06-11-27-35.png"></p>
 <p>记录编译器对象地址 152f2143</p>
-<h1 id="3-反编译"><a href="#3-反编译" class="headerlink" title="3. 反编译"></a>3. 反编译</h1><p>(编译,修改后的文件加载时候有问题,后来在本地修改java文件,传上去加载的)<br>jad –source-only  com.taobao.rigel.rap.workspace.web.action.WorkspaceAction &gt; /tmp/WorkspaceAction.java</p>
-<h1 id="4-将修改后的java文件编译"><a href="#4-将修改后的java文件编译" class="headerlink" title="4. 将修改后的java文件编译"></a>4. 将修改后的java文件编译</h1><p>mc -c 152f2143 WorkspaceAction.java<br>指定类加载,默认的执行路径是对应的程序的执行路径<br><img src="image/arthas记录一次热部署/image-2020-05-06-11-30-51.png" alt="image-2020-05-06-11-30-51.png"></p>
-<h1 id="5-加载class文件"><a href="#5-加载class文件" class="headerlink" title="5. 加载class文件"></a>5. 加载class文件</h1><p>redefine /data/crm/tomcat-jdk8-rap/bin/com/taobao/rigel/rap/workspace/web/action/WorkspaceAction.class</p>
+<h1 id="3-反编译"><a href="#3-反编译" class="headerlink" title="3. 反编译"></a>3. 反编译</h1><p>(编译,修改后的文件加载时候有问题,后来在本地修改java文件,传上去加载的)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jad --source-only  com.taobao.rigel.rap.workspace.web.action.WorkspaceAction &gt; /tmp/WorkspaceAction.java</div></pre></td></tr></table></figure></p>
+<h1 id="4-将修改后的java文件编译"><a href="#4-将修改后的java文件编译" class="headerlink" title="4. 将修改后的java文件编译"></a>4. 将修改后的java文件编译</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mc -c 152f2143 WorkspaceAction.java</div></pre></td></tr></table></figure>
+<p>指定类加载,默认的执行路径是对应的程序的执行路径<br><img src="image/arthas记录一次热部署/image-2020-05-06-11-30-51.png" alt="image-2020-05-06-11-30-51.png"></p>
+<h1 id="5-加载class文件"><a href="#5-加载class文件" class="headerlink" title="5. 加载class文件"></a>5. 加载class文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redefine /data/crm/tomcat-jdk8-rap/bin/com/taobao/rigel/rap/workspace/web/action/WorkspaceAction.class</div></pre></td></tr></table></figure>
 <p><img src="image/arthas记录一次热部署/image-2020-05-06-11-31-25.png" alt="image-2020-05-06-11-31-25.png"></p>
 ]]></content>
     
@@ -851,168 +1219,6 @@
     <summary type="html">
     
       &lt;h1 id=&quot;安全规约-8&quot;&gt;&lt;a href=&quot;#安全规约-8&quot; class=&quot;headerlink&quot; title=&quot;安全规约(8)&quot;&gt;&lt;/a&gt;安全规约(8)&lt;/h1&gt;&lt;h2 id=&quot;强制-7&quot;&gt;&lt;a href=&quot;#强制-7&quot; class=&quot;headerlink&quot; title=
-    
-    </summary>
-    
-      <category term="阿里java规约" scheme="https://blog.signalfire2017.com/categories/%E9%98%BF%E9%87%8Cjava%E8%A7%84%E7%BA%A6/"/>
-    
-    
-      <category term="阿里java规约" scheme="https://blog.signalfire2017.com/tags/%E9%98%BF%E9%87%8Cjava%E8%A7%84%E7%BA%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>阿里java规约(三)-单元测试.md</title>
-    <link href="https://blog.signalfire2017.com/2018/02/09/%E9%98%BF%E9%87%8Cjava%E8%A7%84%E7%BA%A6/%E9%98%BF%E9%87%8Cjava%E8%A7%84%E7%BA%A6(%E4%B8%89)-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
-    <id>https://blog.signalfire2017.com/2018/02/09/阿里java规约/阿里java规约(三)-单元测试/</id>
-    <published>2018-02-09T09:29:33.000Z</published>
-    <updated>2018-02-09T09:54:15.921Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="单元测试-16"><a href="#单元测试-16" class="headerlink" title="单元测试(16)"></a>单元测试(16)</h1><h2 id="强制-7"><a href="#强制-7" class="headerlink" title="强制(7)"></a>强制(7)</h2><ol>
-<li>【强制】好的单元测试必须遵守 AIR 原则。<ul>
-<li>说明： 单元测试在线上运行时，感觉像空气（ AIR） 一样并不存在，但在测试质量的保障上，却是非常关键的。好的单元测试宏观上来说，具有自动化、独立性、可重复执行的特点。</li>
-<li>A： Automatic（自动化）</li>
-<li>I： Independent（独立性）</li>
-<li>R： Repeatable（可重复）</li>
-</ul>
-</li>
-<li>【强制】单元测试应该是全自动执行的，并且非交互式的。测试用例通常是被定期执行的，执行过程必须完全自动化才有意义。输出结果需要人工检查的测试不是一个好的单元测试。单元测试中不准使用 System.out 来进行人肉验证，必须使用 assert 来验证。</li>
-<li>【强制】保持单元测试的独立性。为了保证单元测试稳定可靠且便于维护，单元测试用例之间决不能互相调用，也不能依赖执行的先后次序。<ul>
-<li>反例： method2 需要依赖 method1 的执行， 将执行结果作为 method2 的输入。</li>
-</ul>
-</li>
-<li>【强制】单元测试是可以重复执行的，不能受到外界环境的影响。<ul>
-<li>说明： 单元测试通常会被放到持续集成中，每次有代码 check in 时单元测试都会被执行。如果单测对外部环境（网络、服务、中间件等） 有依赖，容易导致持续集成机制的不可用。</li>
-<li>正例： 为了不受外界环境影响，要求设计代码时就把 SUT 的依赖改成注入，在测试时用 spring这样的 DI 框架注入一个本地（内存）实现或者 Mock 实现。</li>
-</ul>
-</li>
-<li>【强制】对于单元测试，要保证测试粒度足够小，有助于精确定位问题。单测粒度至多是类级别，一般是方法级别。<ul>
-<li>说明： 只有测试粒度小才能在出错时尽快定位到出错位置。单测不负责检查跨类或者跨系统的交互逻辑，那是集成测试的领域。</li>
-</ul>
-</li>
-<li>【强制】核心业务、核心应用、核心模块的增量代码确保单元测试通过。<ul>
-<li>说明： 新增代码及时补充单元测试，如果新增代码影响了原有单元测试，请及时修正。</li>
-</ul>
-</li>
-<li>【强制】单元测试代码必须写在如下工程目录： src/test/java，不允许写在业务代码目录下。<ul>
-<li>说明： 源码构建时会跳过此目录，而单元测试框架默认是扫描此目录。</li>
-</ul>
-</li>
-</ol>
-<h2 id="推荐-7"><a href="#推荐-7" class="headerlink" title="推荐(7)"></a>推荐(7)</h2><ol>
-<li>【推荐】单元测试的基本目标：语句覆盖率达到 70%；核心模块的语句覆盖率和分支覆盖率都要达到 100%<ul>
-<li>说明： 在工程规约的应用分层中提到的 DAO 层， Manager 层，可重用度高的 Service，都应该进行单元测试。</li>
-</ul>
-</li>
-<li>【推荐】编写单元测试代码遵守 BCDE 原则，以保证被测试模块的交付质量。<ul>
-<li>B： Border，边界值测试，包括循环边界、特殊取值、 特殊时间点、数据顺序等。</li>
-<li>C： Correct，正确的输入，并得到预期的结果。</li>
-<li>D： Design，与设计文档相结合，来编写单元测试。</li>
-<li>E： Error，强制错误信息输入（如：非法数据、异常流程、非业务允许输入等），并得到预期的结果。</li>
-</ul>
-</li>
-<li>【推荐】对于数据库相关的查询，更新，删除等操作，不能假设数据库里的数据是存在的，或者直接操作数据库把数据插入进去，请使用程序插入或者导入数据的方式来准备数据。<ul>
-<li>反例： 删除某一行数据的单元测试，在数据库中， 先直接手动增加一行作为删除目标，但是这一行新增数据并不符合业务插入规则， 导致测试结果异常。</li>
-</ul>
-</li>
-<li>【推荐】和数据库相关的单元测试，可以设定自动回滚机制，不给数据库造成脏数据。或者对单元测试产生的数据有明确的前后缀标识。<ul>
-<li>正例： 在 RDC 内部单元测试中，使用 RDC_UNIT<em>TEST</em>的前缀标识数据。</li>
-</ul>
-</li>
-<li>【推荐】对于不可测的代码建议做必要的重构，使代码变得可测，避免为了达到测试要求而书写不规范测试代码。</li>
-<li>【推荐】在设计评审阶段，开发人员需要和测试人员一起确定单元测试范围，单元测试最好覆盖所有测试用例（ UC）。</li>
-<li>【推荐】单元测试作为一种质量保障手段，不建议项目发布后补充单元测试用例，建议在项目提测前完成单元测试。</li>
-</ol>
-<h2 id="参考-2"><a href="#参考-2" class="headerlink" title="参考(2)"></a>参考(2)</h2><ol>
-<li>【参考】为了更方便地进行单元测试，业务代码应避免以下情况：<ul>
-<li>构造方法中做的事情过多。</li>
-<li>存在过多的全局变量和静态方法。</li>
-<li>存在过多的外部依赖。</li>
-<li>存在过多的条件语句。</li>
-<li>说明： 多层条件语句建议使用卫语句、策略模式、状态模式等方式重构。</li>
-</ul>
-</li>
-<li>【参考】不要对单元测试存在如下误解：<ul>
-<li>那是测试同学干的事情。本文是开发手册，凡是本文内容都是与开发同学强相关的。</li>
-<li>单元测试代码是多余的。 汽车的整体功能与各单元部件的测试正常与否是强相关的。</li>
-<li>单元测试代码不需要维护。一年半载后，那么单元测试几乎处于废弃状态。</li>
-<li>单元测试与线上故障没有辩证关系。好的单元测试能够最大限度地规避线上故障。</li>
-</ul>
-</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;单元测试-16&quot;&gt;&lt;a href=&quot;#单元测试-16&quot; class=&quot;headerlink&quot; title=&quot;单元测试(16)&quot;&gt;&lt;/a&gt;单元测试(16)&lt;/h1&gt;&lt;h2 id=&quot;强制-7&quot;&gt;&lt;a href=&quot;#强制-7&quot; class=&quot;headerlink&quot; ti
-    
-    </summary>
-    
-      <category term="阿里java规约" scheme="https://blog.signalfire2017.com/categories/%E9%98%BF%E9%87%8Cjava%E8%A7%84%E7%BA%A6/"/>
-    
-    
-      <category term="阿里java规约" scheme="https://blog.signalfire2017.com/tags/%E9%98%BF%E9%87%8Cjava%E8%A7%84%E7%BA%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>阿里java规约(二)-异常日志(2)-日志规约.md</title>
-    <link href="https://blog.signalfire2017.com/2018/02/09/%E9%98%BF%E9%87%8Cjava%E8%A7%84%E7%BA%A6/%E9%98%BF%E9%87%8Cjava%E8%A7%84%E7%BA%A6(%E4%BA%8C)-%E5%BC%82%E5%B8%B8%E6%97%A5%E5%BF%97(2)-%E6%97%A5%E5%BF%97%E8%A7%84%E7%BA%A6/"/>
-    <id>https://blog.signalfire2017.com/2018/02/09/阿里java规约/阿里java规约(二)-异常日志(2)-日志规约/</id>
-    <published>2018-02-09T08:29:33.000Z</published>
-    <updated>2018-02-09T08:57:21.501Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="日志规约-8"><a href="#日志规约-8" class="headerlink" title="日志规约(8)"></a>日志规约(8)</h1><h2 id="强制-6"><a href="#强制-6" class="headerlink" title="强制(6)"></a>强制(6)</h2><ol>
-<li><p>【强制】应用中<code>不可直接使用</code>日志系统（ Log4j、 Logback） 中的 API，而应依赖<code>使用</code>日志框架<code>SLF4J</code> 中的 API，使用门面模式的日志框架，有利于维护和各个类的日志处理方式统一。</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> org.slf4j.Logger;</div><div class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(Abc.class);</div></pre></td></tr></table></figure>
-</li>
-<li><p>【强制】日志文件推荐<code>至少</code>保存 <code>15</code> 天，因为有些异常具备以“周”为频次发生的特点。</p>
-</li>
-<li>【强制】应用中的扩展日志（ 如打点、临时监控、访问日志等） 命名方式：<ul>
-<li>appName_logType_logName.log。</li>
-<li>logType:日志类型，推荐分类有 stats/monitor/visit 等；</li>
-<li>logName:日志描述。这种命名的好处：通过文件名就可知道日志文件属于什么应用，什么类型，什么目的，也有利于归类查找。</li>
-<li>正例： mppserver 应用中单独监控时区转换异常，如：mppserver_monitor_timeZoneConvert.log</li>
-<li>说明： 推荐对日志进行分类， 如将错误日志和业务日志分开存放，便于开发人员查看，也便于通过日志对系统进行及时监控。</li>
-</ul>
-</li>
-<li><p>【强制】对 trace/debug/info 级别的日志输出，必须使用条件输出形式或者使用占位符的方式。</p>
-<ul>
-<li>说明： logger.debug(“Processing trade with id: “ + id + “ and symbol: “ + symbol);</li>
-<li>如果日志级别是 warn，上述日志不会打印，但是会执行字符串拼接操作，如果 symbol 是对象，会执行 toString()方法，浪费了系统资源，执行了上述操作，最终日志却没有打印。</li>
-<li><p>正例： （ 条件）</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (logger.isDebugEnabled()) &#123;</div><div class="line">    logger.debug(<span class="string">"Processing trade with id: "</span> + id + <span class="string">" and symbol: "</span> + symbol);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>正例： （ 占位符）</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">logger.debug(<span class="string">"Processing trade with id: &#123;&#125; and symbol : &#123;&#125; "</span>, id, symbol);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>【强制】避免重复打印日志，浪费磁盘空间，务必在 log4j.xml 中设置 additivity=false。</p>
-<ul>
-<li>正例： <logger name="com.taobao.dubbo.config" additivity="false"></logger></li>
-</ul>
-</li>
-<li>【强制】异常信息应该包括两类信息：<code>案发现场信息</code>和<code>异常堆栈信息</code>。如果不处理，那么通过关键字 throws 往上抛出。<ul>
-<li>正例： logger.error(各类参数或者对象 toString + “_” + e.getMessage(), e);</li>
-</ul>
-</li>
-</ol>
-<h2 id="推荐-2"><a href="#推荐-2" class="headerlink" title="推荐(2)"></a>推荐(2)</h2><ol>
-<li>【推荐】谨慎地记录日志。生产环境禁止输出 debug 日志； 有选择地输出 info 日志； 如果使用 warn 来记录刚上线时的业务行为信息，一定要注意日志输出量的问题，避免把服务器磁盘撑爆，并记得及时删除这些观察日志。<ul>
-<li>说明： 大量地输出无效日志，不利于系统性能提升，也不利于快速定位错误点。 记录日志时请思考：这些日志真的有人看吗？看到这条日志你能做什么？能不能给问题排查带来好处？</li>
-</ul>
-</li>
-<li>【推荐】可以使用 <code>warn</code> 日志级别来记录<code>用户输入参数错误</code>的情况，避免用户投诉时，无所适从。如非必要，请不要在此场景打出 error 级别，避免频繁报警。<ul>
-<li>说明： 注意日志输出的级别， error 级别只记录系统逻辑出错、异常或者重要的错误信息。</li>
-</ul>
-</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;日志规约-8&quot;&gt;&lt;a href=&quot;#日志规约-8&quot; class=&quot;headerlink&quot; title=&quot;日志规约(8)&quot;&gt;&lt;/a&gt;日志规约(8)&lt;/h1&gt;&lt;h2 id=&quot;强制-6&quot;&gt;&lt;a href=&quot;#强制-6&quot; class=&quot;headerlink&quot; title=
     
     </summary>
     
